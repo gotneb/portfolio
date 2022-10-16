@@ -26,12 +26,14 @@ class _HomeViewState extends State<HomeView> {
           // Build left and right panels
           Row(
             children: [
-              Flexible(
-                flex: 5,
+              SizedBox(
+                width: 0.35 * width,
+                height: height,
                 child: _buildLeftPanel(),
               ),
-              Flexible(
-                flex: 9,
+              SizedBox(
+                width: 0.65 * width,
+                height: height,
                 child: _buildRightPanel(width, height),
               ),
             ],
@@ -88,7 +90,10 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             const Spacer(),
-            Row(
+            Wrap(
+              direction: Axis.horizontal,
+              runSpacing: 10,
+              spacing: 10,
               children: [
                 IconButton(
                     onPressed: () {},
@@ -96,14 +101,14 @@ class _HomeViewState extends State<HomeView> {
                       MyFlutterApp.linkedin,
                       color: isDarkMode ? HomeView.secondary : Colors.white,
                     )),
-                const SizedBox(width: 15),
+                //const SizedBox(width: 15),
                 IconButton(
                     onPressed: () {},
                     icon: Icon(
                       MyFlutterApp.github,
                       color: isDarkMode ? HomeView.secondary : Colors.white,
                     )),
-                const SizedBox(width: 15),
+                //const SizedBox(width: 15),
                 IconButton(
                     onPressed: () {},
                     icon: Icon(
@@ -121,10 +126,10 @@ class _HomeViewState extends State<HomeView> {
         child: Center(
           child: SizedBox(
             width: 0.32 * screenWidth,
-            height: 0.6 * screenHeight,
+            height: 0.7 * screenHeight,
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(
+              SelectableText(
                 'Flutter Developer',
                 style: GoogleFonts.quicksand(
                   fontSize: 20,
@@ -136,7 +141,7 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               const SizedBox(height: 6),
-              Text(
+              SelectableText(
                 'Gabriel Bento',
                 style: GoogleFonts.archivo(
                   color: isDarkMode ? Colors.white : HomeView.secondary,
@@ -146,7 +151,7 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               const SizedBox(height: 24),
-              Text(
+              SelectableText(
                 "There wasn't a bird in the sky, but that was not what caught her attention. It was the clouds. The deep green that isn't the color of clouds, but came with these. She knew what was coming and she hoped she was prepared.",
                 style: GoogleFonts.quicksand(
                   fontSize: 14,
@@ -156,7 +161,9 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               const SizedBox(height: 22),
-              Row(
+              Wrap(
+                direction: Axis.horizontal,
+                runSpacing: 10,
                 children: [
                   ElevatedButton(
                     onPressed: () {},
