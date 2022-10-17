@@ -47,7 +47,7 @@ class _WelcomeViewState extends State<WelcomeView> {
           ),
           // Build my profile photo
           Positioned(
-            top: 0.2 * height,
+            top: 0.22 * height,
             left: 0.22 * width,
             child: Card(
               elevation: 18.0,

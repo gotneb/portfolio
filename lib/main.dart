@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         children: const [
           WelcomeView(),
           ProjectsView(),
+          ContactsView(),
         ],
       )),
     );

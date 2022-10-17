@@ -14,7 +14,7 @@ class ProjectsView extends StatelessWidget {
     Project(
         title: 'Web Scrapping Api',
         description:
-            'This project was a simple web scraper which scrape manga (a japanese draw) pages from other sites. For a better performance the whole data were saved on MongoDb and hosted on Heroku.',
+            'This project was a simple web scraper which scrape manga (a japanese draw) pages from other sites. For a better performance the whole data were saved on MongoDB and hosted on Heroku.',
         techStack: ['Golang', 'MongoDB', 'Heroku']),
     Project(
         title: 'Electric Simulator',
