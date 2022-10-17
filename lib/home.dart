@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/my_flutter_app_icons.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class WelcomeView extends StatefulWidget {
+  const WelcomeView({super.key});
 
   static const primary = Colors.indigo;
-  static final secondary = Colors.black.withOpacity(0.9);
+  static const secondary = Color.fromARGB(255, 30, 30, 30);
 
   static const aboutMe =
       "Hi! I'm an electrical engineering student from Brazil who loves coding and someone who loves build my own tools.";
@@ -14,10 +14,10 @@ class HomeView extends StatefulWidget {
       "During the day I study on college and at my free time I work in my own projects. My majority interests are mobile and games development. I also have tried desktop aplications. When I'm not studying then I'm playing something else.";
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<WelcomeView> createState() => _WelcomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _WelcomeViewState extends State<WelcomeView> {
   var isDarkMode = true;
 
   @override
@@ -25,19 +25,21 @@ class _HomeViewState extends State<HomeView> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      body: Stack(
+    return SizedBox(
+      width: width,
+      height: height,
+      child: Stack(
         children: <Widget>[
           // Build left and right panels
           Row(
             children: [
               SizedBox(
-                width: 0.35 * width,
+                width: 0.37 * width,
                 height: height,
                 child: _buildLeftPanel(),
               ),
               SizedBox(
-                width: 0.65 * width,
+                width: 0.63 * width,
                 height: height,
                 child: _buildRightPanel(width, height),
               ),
@@ -55,7 +57,7 @@ class _HomeViewState extends State<HomeView> {
                 backgroundColor: Colors.transparent,
                 foregroundColor: Colors.transparent,
                 radius: 0.15 * MediaQuery.of(context).size.width,
-                foregroundImage: const AssetImage('assets/me4.jpg'),
+                foregroundImage: const AssetImage('assets/images/me.jpg'),
               ),
             ),
           ),
@@ -67,7 +69,7 @@ class _HomeViewState extends State<HomeView> {
               padding: const EdgeInsets.all(0),
               icon: Icon(
                 isDarkMode ? Icons.dark_mode : Icons.light_mode,
-                color: isDarkMode ? HomeView.primary : HomeView.secondary,
+                color: isDarkMode ? WelcomeView.primary : WelcomeView.secondary,
                 size: 24,
               ),
               onPressed: () {
@@ -84,14 +86,14 @@ class _HomeViewState extends State<HomeView> {
 
   Widget _buildLeftPanel() => Container(
         padding: const EdgeInsets.fromLTRB(40, 40, 0, 40),
-        color: HomeView.primary,
+        color: WelcomeView.primary,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SelectableText(
               'Gabriel Bento',
               style: GoogleFonts.sacramento(
-                color: isDarkMode ? HomeView.secondary : Colors.white,
+                color: isDarkMode ? WelcomeView.secondary : Colors.white,
                 fontSize: 30,
                 fontWeight: FontWeight.w400,
               ),
@@ -115,11 +117,11 @@ class _HomeViewState extends State<HomeView> {
       onPressed: () {},
       icon: Icon(
         icon,
-        color: isDarkMode ? HomeView.secondary : Colors.white,
+        color: isDarkMode ? WelcomeView.secondary : Colors.white,
       ));
 
   Widget _buildRightPanel(double screenWidth, double screenHeight) => Container(
-        color: isDarkMode ? HomeView.secondary : Colors.white,
+        color: isDarkMode ? WelcomeView.secondary : Colors.white,
         child: Row(
           children: [
             SizedBox(width: 0.25 * screenWidth),
@@ -143,7 +145,7 @@ class _HomeViewState extends State<HomeView> {
                 SelectableText(
                   'Gabriel Bento',
                   style: GoogleFonts.archivo(
-                    color: isDarkMode ? Colors.white : HomeView.secondary,
+                    color: isDarkMode ? Colors.white : WelcomeView.secondary,
                     fontSize: 44,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.6,
@@ -151,22 +153,24 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 const SizedBox(height: 24),
                 SelectableText(
-                  HomeView.aboutMe,
+                  WelcomeView.aboutMe,
                   style: GoogleFonts.quicksand(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1,
-                    color: isDarkMode ? Colors.grey[400] : HomeView.secondary,
+                    color:
+                        isDarkMode ? Colors.grey[400] : WelcomeView.secondary,
                   ),
                 ),
                 const SizedBox(height: 18),
                 SelectableText(
-                  HomeView.aboutMe2,
+                  WelcomeView.aboutMe2,
                   style: GoogleFonts.quicksand(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1,
-                    color: isDarkMode ? Colors.grey[400] : HomeView.secondary,
+                    color:
+                        isDarkMode ? Colors.grey[400] : WelcomeView.secondary,
                   ),
                 ),
                 const SizedBox(height: 22),
@@ -179,13 +183,13 @@ class _HomeViewState extends State<HomeView> {
                       style: ElevatedButton.styleFrom(
                         shape: const StadiumBorder(),
                         side: const BorderSide(
-                          color: HomeView.primary,
+                          color: WelcomeView.primary,
                           width: 2,
                         ),
                         padding: const EdgeInsets.all(20),
                         backgroundColor:
                             isDarkMode ? Colors.transparent : Colors.white,
-                        foregroundColor: HomeView.primary,
+                        foregroundColor: WelcomeView.primary,
                         fixedSize: const Size(140, 40),
                         textStyle: const TextStyle(letterSpacing: 1),
                       ),
@@ -197,8 +201,8 @@ class _HomeViewState extends State<HomeView> {
                       style: ElevatedButton.styleFrom(
                         shape: const StadiumBorder(),
                         foregroundColor:
-                            isDarkMode ? HomeView.secondary : Colors.white,
-                        backgroundColor: HomeView.primary,
+                            isDarkMode ? WelcomeView.secondary : Colors.white,
+                        backgroundColor: WelcomeView.primary,
                         padding: const EdgeInsets.all(20),
                         fixedSize: const Size(140, 40),
                         textStyle: const TextStyle(
