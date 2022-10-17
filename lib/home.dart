@@ -34,12 +34,12 @@ class _WelcomeViewState extends State<WelcomeView> {
           Row(
             children: [
               SizedBox(
-                width: 0.37 * width,
+                width: 0.35 * width,
                 height: height,
                 child: _buildLeftPanel(),
               ),
               SizedBox(
-                width: 0.63 * width,
+                width: 0.65 * width,
                 height: height,
                 child: _buildRightPanel(width, height),
               ),
@@ -47,7 +47,7 @@ class _WelcomeViewState extends State<WelcomeView> {
           ),
           // Build my profile photo
           Positioned(
-            top: 0.22 * height,
+            top: 0.25 * height,
             left: 0.22 * width,
             child: Card(
               elevation: 18.0,
@@ -56,7 +56,7 @@ class _WelcomeViewState extends State<WelcomeView> {
               child: CircleAvatar(
                 backgroundColor: Colors.transparent,
                 foregroundColor: Colors.transparent,
-                radius: 0.15 * MediaQuery.of(context).size.width,
+                radius: 0.135 * MediaQuery.of(context).size.width,
                 foregroundImage: const AssetImage('assets/images/me.jpg'),
               ),
             ),
@@ -124,7 +124,7 @@ class _WelcomeViewState extends State<WelcomeView> {
         color: isDarkMode ? WelcomeView.secondary : Colors.white,
         child: Row(
           children: [
-            SizedBox(width: 0.25 * screenWidth),
+            SizedBox(width: 0.2 * screenWidth),
             SizedBox(
               width: 0.34 * screenWidth,
               height: screenHeight,
