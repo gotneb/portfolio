@@ -29,8 +29,6 @@ class ProjectsView extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     return Container(
-      width: width,
-      height: 0.9 * height,
       color: const Color.fromARGB(255, 30, 30, 30),
       child: Column(
         children: [
@@ -41,7 +39,6 @@ class ProjectsView extends StatelessWidget {
           ),
           SizedBox(
             width: width,
-            height: 0.5 * height,
             child: _buildProjectsSection(),
           ),
         ],

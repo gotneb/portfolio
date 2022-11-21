@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/my_flutter_app_icons.dart';
+import 'styles/dark.dart' as dark_mode;
+import 'styles/light.dart' as light_mode;
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
@@ -93,7 +95,8 @@ class _WelcomeViewState extends State<WelcomeView> {
             SelectableText(
               'Gabriel Bento',
               style: GoogleFonts.sacramento(
-                color: isDarkMode ? WelcomeView.secondary : Colors.white,
+                color:
+                    isDarkMode ? dark_mode.background : light_mode.background,
                 fontSize: 30,
                 fontWeight: FontWeight.w400,
               ),
@@ -117,11 +120,11 @@ class _WelcomeViewState extends State<WelcomeView> {
       onPressed: () {},
       icon: Icon(
         icon,
-        color: isDarkMode ? WelcomeView.secondary : Colors.white,
+        color: isDarkMode ? dark_mode.background : light_mode.background,
       ));
 
   Widget _buildRightPanel(double screenWidth, double screenHeight) => Container(
-        color: isDarkMode ? WelcomeView.secondary : Colors.white,
+        color: isDarkMode ? dark_mode.background : light_mode.background,
         child: Row(
           children: [
             SizedBox(width: 0.2 * screenWidth),
@@ -132,35 +135,35 @@ class _WelcomeViewState extends State<WelcomeView> {
                 SizedBox(height: 0.26 * screenHeight),
                 SelectableText(
                   'Flutter Developer',
-                  style: GoogleFonts.quicksand(
-                    fontSize: 20,
-                    letterSpacing: 1.2,
-                    color: isDarkMode
-                        ? Colors.grey[200]
-                        : Colors.black.withOpacity(0.7),
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: isDarkMode
+                      ? dark_mode.subTitleStyle
+                      : light_mode.subTitleStyle,
                 ),
                 const SizedBox(height: 6),
                 SelectableText(
                   'Gabriel Bento',
-                  style: GoogleFonts.archivo(
-                    color: isDarkMode ? Colors.white : WelcomeView.secondary,
-                    fontSize: 44,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.6,
-                  ),
+                  style:
+                      isDarkMode ? dark_mode.titleStyle : light_mode.titleStyle,
                 ),
+                // Small warning advising this is not done yet
+                const SizedBox(height: 24),
+                Row(children: [
+                  const Icon(Icons.error_rounded, color: Colors.deepOrange),
+                  const SizedBox(width: 10),
+                  Flexible(
+                    child: SelectableText(
+                      'This site is not done yet. You might experience some errors.',
+                      style: isDarkMode
+                          ? dark_mode.subTitleStyle
+                          : light_mode.subTitleStyle,
+                    ),
+                  ),
+                ]),
+                // =============================================
                 const SizedBox(height: 24),
                 SelectableText(
                   WelcomeView.aboutMe,
-                  style: GoogleFonts.quicksand(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1,
-                    color:
-                        isDarkMode ? Colors.grey[400] : WelcomeView.secondary,
-                  ),
+                  style: isDarkMode ? dark_mode.about : light_mode.about,
                 ),
                 const SizedBox(height: 18),
                 SelectableText(

@@ -14,36 +14,29 @@ class ContactsView extends StatelessWidget {
 
     return Container(
       width: width,
-      height: 0.9*height,
+      height: 0.9 * height,
       color: blackColor,
-      child: Column(
-        children: [
-          Container(
+      child: Column(children: [
+        Container(
+          color: blackColor,
+          width: width,
+          height: 0.2 * height,
+          child: _buildHeader(),
+        ),
+        Center(
+          child: Container(
             color: blackColor,
-            width: width,
-            height: 0.2 * height,
-            child: _buildHeader(),
-          ),
-          Container(
-            color: blackColor,
-            width: width,
+            width: 0.5 * width,
             height: 0.7 * height,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(width: 50),
-                _buildInputColumn(width, height),
-                const SizedBox(width: 50),
-                _buildLocalizationColumn(width, height),
-              ],
-            ),
+            child: _buildInputColumn(width, height),
           ),
-        ],
-      ),
+        ),
+      ]),
     );
   }
 
   Widget _buildHeader() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(width: 50),
           Text(
@@ -65,6 +58,8 @@ class ContactsView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            _buildLocationlRow(
+                icon: Icons.location_on, text: 'Manaus, Amazonas, Brazil'),
             TextField(
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
@@ -185,22 +180,5 @@ class ContactsView extends StatelessWidget {
             ),
           ),
         ],
-      );
-
-  Widget _buildLocalizationColumn(double width, double height) => SizedBox(
-        width: 0.3 * width,
-        height: 0.4 * height,
-        child: Column(
-          children: [
-            _buildLocationlRow(
-                icon: Icons.alternate_email,
-                text: 'gabrielorigenstdb@gmail.com'),
-            const SizedBox(height: 30),
-            _buildLocationlRow(icon: Icons.call, text: '+55 92 98479-8458'),
-            const SizedBox(height: 30),
-            _buildLocationlRow(
-                icon: Icons.location_on, text: 'Manaus, Amazonas, Brazil'),
-          ],
-        ),
       );
 }
