@@ -60,6 +60,7 @@ class ContactsView extends StatelessWidget {
           children: [
             _buildLocationlRow(
                 icon: Icons.location_on, text: 'Manaus, Amazonas, Brazil'),
+            const SizedBox(height: 10),
             TextField(
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
@@ -74,15 +75,16 @@ class ContactsView extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(width: 5, color: Colors.indigo),
+                  borderSide: const BorderSide(width: 3, color: Colors.indigo),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(width: 5, color: Colors.indigo),
+                  borderSide: const BorderSide(width: 3, color: Colors.indigo),
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
             ),
+            const SizedBox(height: 10),
             TextField(
               style: const TextStyle(color: Colors.white),
               keyboardType: TextInputType.emailAddress,
@@ -98,15 +100,16 @@ class ContactsView extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(width: 5, color: Colors.indigo),
+                  borderSide: const BorderSide(width: 3, color: Colors.indigo),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(width: 5, color: Colors.indigo),
+                  borderSide: const BorderSide(width: 3, color: Colors.indigo),
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
             ),
+            const SizedBox(height: 10),
             SizedBox(
               height: 160,
               child: TextField(
@@ -127,17 +130,18 @@ class ContactsView extends StatelessWidget {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide:
-                        const BorderSide(width: 5, color: Colors.indigo),
+                        const BorderSide(width: 3, color: Colors.indigo),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide:
-                        const BorderSide(width: 5, color: Colors.indigo),
+                        const BorderSide(width: 3, color: Colors.indigo),
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),
             ),
+            const SizedBox(height: 15),
             HoverButton(
                 onTap: () {},
                 child: Row(

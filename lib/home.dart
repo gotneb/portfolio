@@ -87,7 +87,7 @@ class _WelcomeViewState extends State<WelcomeView> {
   }
 
   Widget _buildLeftPanel() => Container(
-        padding: const EdgeInsets.fromLTRB(40, 40, 0, 40),
+        padding: const EdgeInsets.fromLTRB(40, 20, 0, 15),
         color: WelcomeView.primary,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,94 +131,99 @@ class _WelcomeViewState extends State<WelcomeView> {
             SizedBox(
               width: 0.34 * screenWidth,
               height: screenHeight,
-              child: ListView(children: [
-                SizedBox(height: 0.26 * screenHeight),
-                SelectableText(
-                  'Flutter Developer',
-                  style: isDarkMode
-                      ? dark_mode.subTitleStyle
-                      : light_mode.subTitleStyle,
-                ),
-                const SizedBox(height: 6),
-                SelectableText(
-                  'Gabriel Bento',
-                  style:
-                      isDarkMode ? dark_mode.titleStyle : light_mode.titleStyle,
-                ),
-                // Small warning advising this is not done yet
-                const SizedBox(height: 24),
-                Row(children: [
-                  const Icon(Icons.error_rounded, color: Colors.deepOrange),
-                  const SizedBox(width: 10),
-                  Flexible(
-                    child: SelectableText(
-                      'This site is not done yet. You might experience some errors.',
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SelectableText(
+                      'Flutter Developer',
                       style: isDarkMode
                           ? dark_mode.subTitleStyle
                           : light_mode.subTitleStyle,
                     ),
-                  ),
-                ]),
-                // =============================================
-                const SizedBox(height: 24),
-                SelectableText(
-                  WelcomeView.aboutMe,
-                  style: isDarkMode ? dark_mode.about : light_mode.about,
-                ),
-                const SizedBox(height: 18),
-                SelectableText(
-                  WelcomeView.aboutMe2,
-                  style: GoogleFonts.quicksand(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1,
-                    color:
-                        isDarkMode ? Colors.grey[400] : WelcomeView.secondary,
-                  ),
-                ),
-                const SizedBox(height: 22),
-                Wrap(
-                  direction: Axis.horizontal,
-                  runSpacing: 10,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        shape: const StadiumBorder(),
-                        side: const BorderSide(
-                          color: WelcomeView.primary,
-                          width: 2,
-                        ),
-                        padding: const EdgeInsets.all(20),
-                        backgroundColor:
-                            isDarkMode ? Colors.transparent : Colors.white,
-                        foregroundColor: WelcomeView.primary,
-                        fixedSize: const Size(140, 40),
-                        textStyle: const TextStyle(letterSpacing: 1),
-                      ),
-                      child: const Text('Download CV'),
+                    const SizedBox(height: 6),
+                    SelectableText(
+                      'Gabriel Bento',
+                      style: isDarkMode
+                          ? dark_mode.titleStyle
+                          : light_mode.titleStyle,
                     ),
-                    const SizedBox(width: 20),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        shape: const StadiumBorder(),
-                        foregroundColor:
-                            isDarkMode ? WelcomeView.secondary : Colors.white,
-                        backgroundColor: WelcomeView.primary,
-                        padding: const EdgeInsets.all(20),
-                        fixedSize: const Size(140, 40),
-                        textStyle: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1.2,
+                    // Small warning advising this is not done yet
+                    const SizedBox(height: 24),
+                    Row(children: [
+                      const Icon(Icons.error_rounded, color: Colors.deepOrange),
+                      const SizedBox(width: 10),
+                      Flexible(
+                        child: SelectableText(
+                          'This site is not done yet. You might experience some errors.',
+                          style: isDarkMode
+                              ? dark_mode.subTitleStyle
+                              : light_mode.subTitleStyle,
                         ),
                       ),
-                      child: const Text('Contact'),
+                    ]),
+                    // =============================================
+                    const SizedBox(height: 24),
+                    SelectableText(
+                      WelcomeView.aboutMe,
+                      style: isDarkMode ? dark_mode.about : light_mode.about,
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-              ]),
+                    const SizedBox(height: 18),
+                    SelectableText(
+                      WelcomeView.aboutMe2,
+                      style: GoogleFonts.quicksand(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                        color: isDarkMode
+                            ? Colors.grey[400]
+                            : WelcomeView.secondary,
+                      ),
+                    ),
+                    const SizedBox(height: 22),
+                    Wrap(
+                      direction: Axis.horizontal,
+                      runSpacing: 10,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            shape: const StadiumBorder(),
+                            side: const BorderSide(
+                              color: WelcomeView.primary,
+                              width: 2,
+                            ),
+                            padding: const EdgeInsets.all(20),
+                            backgroundColor:
+                                isDarkMode ? Colors.transparent : Colors.white,
+                            foregroundColor: WelcomeView.primary,
+                            fixedSize: const Size(140, 40),
+                            textStyle: const TextStyle(letterSpacing: 1),
+                          ),
+                          child: const Text('Download CV'),
+                        ),
+                        const SizedBox(width: 20),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            shape: const StadiumBorder(),
+                            foregroundColor: isDarkMode
+                                ? WelcomeView.secondary
+                                : Colors.white,
+                            backgroundColor: WelcomeView.primary,
+                            padding: const EdgeInsets.all(20),
+                            fixedSize: const Size(140, 40),
+                            textStyle: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.2,
+                            ),
+                          ),
+                          child: const Text('Contact'),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                  ]),
             ),
           ],
         ),

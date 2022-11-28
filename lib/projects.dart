@@ -32,11 +32,7 @@ class ProjectsView extends StatelessWidget {
       color: const Color.fromARGB(255, 30, 30, 30),
       child: Column(
         children: [
-          SizedBox(
-            width: width,
-            height: 0.4 * height,
-            child: _buildHeader(width, height),
-          ),
+          ..._buildHeader(width, height),
           SizedBox(
             width: width,
             child: _buildProjectsSection(),
@@ -46,23 +42,20 @@ class ProjectsView extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader(double width, double height) => Column(
-        children: [
-          SizedBox(height: 0.1 * height),
-          _buildDecorationLines(screenWidth: width, screenHeight: height),
-          SizedBox(height: 0.04 * height),
-          Text(
-            'Projects',
-            style: GoogleFonts.palanquinDark(
-              color: Colors.indigo,
-              fontSize: 70,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.2,
-            ),
+  List<Widget> _buildHeader(double width, double height) => [
+        SizedBox(height: 0.1 * height),
+        _buildDecorationLines(screenWidth: width, screenHeight: height),
+        Text(
+          'Projects',
+          style: GoogleFonts.palanquinDark(
+            color: Colors.indigo,
+            fontSize: 70,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.2,
           ),
-          SizedBox(height: 0.05 * height),
-        ],
-      );
+        ),
+        SizedBox(height: 0.05 * height),
+      ];
 
   Widget _buildProjectsSection() => SingleChildScrollView(
         child: Wrap(
