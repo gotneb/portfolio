@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/my_flutter_app_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'styles/dark.dart' as dark_mode;
 import 'styles/light.dart' as light_mode;
 
@@ -14,6 +15,12 @@ class WelcomeView extends StatefulWidget {
       "Hi! I'm an electrical engineering student from Brazil who loves coding and someone who loves build my own tools.";
   static const aboutMe2 =
       "During the day I study on college and at my free time I work in my own projects. My majority interests are mobile and games development. I also have tried desktop aplications. When I'm not studying then I'm playing something else.";
+
+  static const urls = <String, String>{
+    "linkedin": "https://www.linkedin.com/in/gabriel-bento-da-silva-250291172/",
+    "github": "https://github.com/gotneb",
+    "twitter": "https://twitter.com/Gabriel36509504",
+  };
 
   @override
   State<WelcomeView> createState() => _WelcomeViewState();
@@ -89,39 +96,47 @@ class _WelcomeViewState extends State<WelcomeView> {
   Widget _buildLeftPanel() => Container(
         padding: const EdgeInsets.fromLTRB(40, 20, 0, 15),
         color: WelcomeView.primary,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SelectableText(
-              'Gabriel Bento',
-              style: GoogleFonts.sacramento(
-                color:
-                    isDarkMode ? dark_mode.background : light_mode.background,
-                fontSize: 30,
-                fontWeight: FontWeight.w400,
-              ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          SelectableText(
+            'Gabriel Bento',
+            style: GoogleFonts.sacramento(
+              color: isDarkMode ? dark_mode.background : light_mode.background,
+              fontSize: 30,
+              fontWeight: FontWeight.w400,
             ),
-            const Spacer(),
-            Wrap(
+          ),
+          const Spacer(),
+          Wrap(
               direction: Axis.horizontal,
               runSpacing: 10,
               spacing: 10,
               children: [
-                _buildSocialButton(icon: MyFlutterApp.linkedin),
-                _buildSocialButton(icon: MyFlutterApp.github),
-                _buildSocialButton(icon: MyFlutterApp.twitter),
-              ],
-            ),
-          ],
-        ),
+                _buildSocialButton(
+                  icon: MyFlutterApp.linkedin,
+                  url: WelcomeView.urls["linkedin"]!,
+                ),
+                _buildSocialButton(
+                  icon: MyFlutterApp.github,
+                  url: WelcomeView.urls["github"]!,
+                ),
+                _buildSocialButton(
+                  icon: MyFlutterApp.twitter,
+                  url: WelcomeView.urls["twitter"]!,
+                ),
+              ]),
+        ]),
       );
 
-  Widget _buildSocialButton({required IconData icon}) => IconButton(
-      onPressed: () {},
-      icon: Icon(
-        icon,
-        color: isDarkMode ? dark_mode.background : light_mode.background,
-      ));
+  Widget _buildSocialButton({
+    required IconData icon,
+    required String url,
+  }) =>
+      IconButton(
+          onPressed: () async => await launchUrl(Uri.parse(url)),
+          icon: Icon(
+            icon,
+            color: isDarkMode ? dark_mode.background : light_mode.background,
+          ));
 
   Widget _buildRightPanel(double screenWidth, double screenHeight) => Container(
         color: isDarkMode ? dark_mode.background : light_mode.background,
