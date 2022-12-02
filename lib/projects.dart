@@ -42,7 +42,10 @@ class ProjectsView extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     return Container(
-      color: isDarkMode ? dark_mode.background : light_mode.background,
+      decoration: BoxDecoration(
+        color: isDarkMode ? dark_mode.background : light_mode.background,
+        border: Border.all(color: Colors.transparent),
+      ),
       child: Column(
         children: [
           ..._buildHeader(width, height),

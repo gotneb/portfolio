@@ -5,9 +5,11 @@ class HoverButton extends StatefulWidget {
     super.key,
     required this.child,
     required this.onTap,
+    required this.hoverColor,
   });
 
   final Widget child;
+  final Color hoverColor;
   final void Function() onTap;
 
   @override
@@ -37,7 +39,7 @@ class _HoverButtonState extends State<HoverButton> {
               width: 130,
               height: 50,
               decoration: BoxDecoration(
-                color: _isMouseAbove ? Colors.white : Colors.indigo,
+                color: _isMouseAbove ? widget.hoverColor : Colors.indigo,
                 borderRadius: BorderRadius.circular(40),
               ),
               child: widget.child,

@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components/custom_buttom.dart';
 
-class ContactsView extends StatelessWidget {
-  const ContactsView({super.key});
+import 'styles/dark.dart' as dark_mode;
+import 'styles/light.dart' as light_mode;
 
-  static const blackColor = Color.fromARGB(255, 30, 30, 30);
+class ContactsView extends StatelessWidget {
+  const ContactsView({
+    super.key,
+    required this.isDarkMode,
+  });
+
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +21,17 @@ class ContactsView extends StatelessWidget {
     return Container(
       width: width,
       height: 0.9 * height,
-      color: blackColor,
+      color: isDarkMode ? dark_mode.background : light_mode.background,
       child: Column(children: [
         Container(
-          color: blackColor,
+          color: isDarkMode ? dark_mode.background : light_mode.background,
           width: width,
           height: 0.2 * height,
           child: _buildHeader(),
         ),
         Center(
           child: Container(
-            color: blackColor,
+            color: isDarkMode ? dark_mode.background : light_mode.background,
             width: 0.5 * width,
             height: 0.7 * height,
             child: _buildInputColumn(width, height),
@@ -62,7 +68,9 @@ class ContactsView extends StatelessWidget {
                 icon: Icons.location_on, text: 'Manaus, Amazonas, Brazil'),
             const SizedBox(height: 10),
             TextField(
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(
+                  color:
+                      isDarkMode ? dark_mode.secondary : light_mode.secondary),
               decoration: InputDecoration(
                 labelText: 'Name',
                 hintText: 'Bruce Lee...',
@@ -86,7 +94,9 @@ class ContactsView extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             TextField(
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(
+                  color:
+                      isDarkMode ? dark_mode.secondary : light_mode.secondary),
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: 'Email',
@@ -114,7 +124,10 @@ class ContactsView extends StatelessWidget {
               height: 160,
               child: TextField(
                 textAlign: TextAlign.start,
-                style: const TextStyle(color: Colors.white),
+                style: TextStyle(
+                    color: isDarkMode
+                        ? dark_mode.secondary
+                        : light_mode.secondary),
                 keyboardType: TextInputType.emailAddress,
                 maxLines: 15,
                 decoration: InputDecoration(
@@ -144,16 +157,23 @@ class ContactsView extends StatelessWidget {
             const SizedBox(height: 15),
             HoverButton(
                 onTap: () {},
+                hoverColor:
+                    isDarkMode ? dark_mode.secondary : light_mode.secondary,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
+                  children: [
                     Text('Send',
                         style: TextStyle(
-                          color: blackColor,
+                          color: isDarkMode
+                              ? dark_mode.background
+                              : light_mode.background,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         )),
-                    Icon(Icons.send, color: blackColor),
+                    Icon(Icons.send,
+                        color: isDarkMode
+                            ? dark_mode.background
+                            : light_mode.background),
                   ],
                 )),
           ],
@@ -173,14 +193,19 @@ class ContactsView extends StatelessWidget {
               color: Colors.indigo,
               shape: BoxShape.circle,
             ),
-            child: Icon(icon, color: blackColor),
+            child: Icon(icon,
+                color:
+                    isDarkMode ? dark_mode.background : light_mode.background),
           ),
           const SizedBox(width: 20),
           Text(
             text,
             style: GoogleFonts.nunito(
-              color: Colors.white,
+              color: isDarkMode
+                  ? dark_mode.secondary
+                  : light_mode.secondary, //Colors.white,
               fontSize: 18,
+              fontWeight: isDarkMode ? null : FontWeight.w600,
             ),
           ),
         ],

@@ -21,7 +21,7 @@ class _PortfolioState extends State<Portfolio> {
       children: [
         HomeView(isDarkMode: _isDarkMode, changeMode: _changeMode),
         ProjectsView(isDarkMode: _isDarkMode, changeMode: _changeMode),
-        //ContactsView(),
+        ContactsView(isDarkMode: _isDarkMode),
       ],
     ));
   }
