@@ -1,3 +1,9 @@
+/*
+  I know it's clumsy and I could do a class for that,
+  'dark mode' and light mode are the same, only changing properties,
+  so I could use inheritance for that. Pretty sure I'll do it, but not know.
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,3 +31,18 @@ final about = GoogleFonts.quicksand(
   letterSpacing: 1,
   color: secondary,
 );
+
+// Projects styles
+final smallAbout = GoogleFonts.quicksand(
+  fontSize: 13,
+  fontWeight: FontWeight.w600,
+  color: secondary,
+);
+
+final normalAbout = GoogleFonts.quicksand(
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+  height: 1.5,
+  color: secondary,
+);
+// ===============

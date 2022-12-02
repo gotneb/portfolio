@@ -2,22 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components/project_banner.dart';
 
+import 'styles/dark.dart' as dark_mode;
+import 'styles/light.dart' as light_mode;
+
 class ProjectsView extends StatelessWidget {
-  const ProjectsView({super.key});
+  const ProjectsView({
+    super.key,
+    required this.isDarkMode,
+    required this.changeMode,
+  });
+
+  final bool isDarkMode;
+  final VoidCallback changeMode;
 
   static const projects = [
     Project(
         title: 'Youtube Downloader',
+        repository: 'https://github.com/gotneb/rost_youtube_downloader',
         description:
             'This is android aplication created to download videos and audio from youtube.',
         techStack: ['Flutter']),
     Project(
         title: 'Web Scrapping Api',
+        repository: 'https://github.com/gotneb/manga_api',
         description:
             'This project was a simple web scraper which scrape manga (a japanese draw) pages from other sites. For a better performance the whole data were saved on MongoDB and hosted on Heroku.',
-        techStack: ['Golang', 'MongoDB', 'Heroku']),
+        techStack: ['Golang', 'MongoDB', 'Railway']),
     Project(
         title: 'Electric Simulator',
+        repository: 'https://github.com/gotneb/Electrophorus',
         description:
             'This project has the aim to be a simulator and help college students from electrical course to have a better understand about electric circuits concepts.',
         techStack: ['C#', 'Windows Forms']),
@@ -29,7 +42,7 @@ class ProjectsView extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     return Container(
-      color: const Color.fromARGB(255, 30, 30, 30),
+      color: isDarkMode ? dark_mode.background : light_mode.background,
       child: Column(
         children: [
           ..._buildHeader(width, height),
@@ -37,13 +50,14 @@ class ProjectsView extends StatelessWidget {
             width: width,
             child: _buildProjectsSection(),
           ),
+          SizedBox(height: 0.03 * height),
         ],
       ),
     );
   }
 
   List<Widget> _buildHeader(double width, double height) => [
-        SizedBox(height: 0.1 * height),
+        SizedBox(height: 0.05 * height),
         _buildDecorationLines(screenWidth: width, screenHeight: height),
         Text(
           'Projects',
@@ -65,12 +79,35 @@ class ProjectsView extends StatelessWidget {
           direction: Axis.horizontal,
           children: [
             BannerProject(
-                project: projects[0], imagePath: 'assets/images/mobile.png'),
+              project: projects[0],
+              imagePath: 'assets/images/mobile.png',
+              repository: projects[0].repository,
+              bg: isDarkMode ? dark_mode.background : light_mode.background,
+              normalStyle:
+                  isDarkMode ? dark_mode.normalAbout : light_mode.normalAbout,
+              smallStyle:
+                  isDarkMode ? dark_mode.smallAbout : light_mode.smallAbout,
+            ),
             BannerProject(
-                project: projects[1],
-                imagePath: 'assets/images/search_engine.png'),
+              project: projects[1],
+              imagePath: 'assets/images/search_engine.png',
+              repository: projects[1].repository,
+              bg: isDarkMode ? dark_mode.background : light_mode.background,
+              normalStyle:
+                  isDarkMode ? dark_mode.normalAbout : light_mode.normalAbout,
+              smallStyle:
+                  isDarkMode ? dark_mode.smallAbout : light_mode.smallAbout,
+            ),
             BannerProject(
-                project: projects[2], imagePath: 'assets/images/website.png'),
+              project: projects[2],
+              imagePath: 'assets/images/website.png',
+              repository: projects[2].repository,
+              bg: isDarkMode ? dark_mode.background : light_mode.background,
+              normalStyle:
+                  isDarkMode ? dark_mode.normalAbout : light_mode.normalAbout,
+              smallStyle:
+                  isDarkMode ? dark_mode.smallAbout : light_mode.smallAbout,
+            ),
           ],
         ),
       );
@@ -113,9 +150,11 @@ class Project {
     required this.title,
     required this.description,
     required this.techStack,
+    required this.repository,
   });
 
   final String title;
   final String description;
   final List<String> techStack;
+  final String repository;
 }

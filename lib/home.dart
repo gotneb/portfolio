@@ -5,12 +5,21 @@ import 'package:url_launcher/url_launcher.dart';
 import 'styles/dark.dart' as dark_mode;
 import 'styles/light.dart' as light_mode;
 
-class WelcomeView extends StatefulWidget {
-  const WelcomeView({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({
+    super.key,
+    required this.isDarkMode,
+    required this.changeMode,
+  });
 
+  final bool isDarkMode;
+  final VoidCallback changeMode;
+
+  // Colors
   static const primary = Colors.indigo;
   static const secondary = Color.fromARGB(255, 30, 30, 30);
 
+  // Strings
   static const aboutMe =
       "Hi! I'm an electrical engineering student from Brazil who loves coding and someone who loves build my own tools.";
   static const aboutMe2 =
@@ -20,14 +29,9 @@ class WelcomeView extends StatefulWidget {
     "linkedin": "https://www.linkedin.com/in/gabriel-bento-da-silva-250291172/",
     "github": "https://github.com/gotneb",
     "twitter": "https://twitter.com/Gabriel36509504",
+    'cv':
+        'https://raw.githubusercontent.com/gotneb/gotneb.github.io/03229d0b9318155a2ab48709137df2620e9878ab/resources/gabriel_bento_da_silva.pdf',
   };
-
-  @override
-  State<WelcomeView> createState() => _WelcomeViewState();
-}
-
-class _WelcomeViewState extends State<WelcomeView> {
-  var isDarkMode = true;
 
   @override
   Widget build(BuildContext context) {
@@ -78,14 +82,10 @@ class _WelcomeViewState extends State<WelcomeView> {
               padding: const EdgeInsets.all(0),
               icon: Icon(
                 isDarkMode ? Icons.dark_mode : Icons.light_mode,
-                color: isDarkMode ? WelcomeView.primary : WelcomeView.secondary,
+                color: isDarkMode ? primary : secondary,
                 size: 24,
               ),
-              onPressed: () {
-                setState(() {
-                  isDarkMode = !isDarkMode;
-                });
-              },
+              onPressed: changeMode,
             ),
           ),
         ],
@@ -95,7 +95,7 @@ class _WelcomeViewState extends State<WelcomeView> {
 
   Widget _buildLeftPanel() => Container(
         padding: const EdgeInsets.fromLTRB(40, 20, 0, 15),
-        color: WelcomeView.primary,
+        color: primary,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SelectableText(
             'Gabriel Bento',
@@ -113,15 +113,18 @@ class _WelcomeViewState extends State<WelcomeView> {
               children: [
                 _buildSocialButton(
                   icon: MyFlutterApp.linkedin,
-                  url: WelcomeView.urls["linkedin"]!,
+                  messageTip: 'Linkedin',
+                  url: urls["linkedin"]!,
                 ),
                 _buildSocialButton(
                   icon: MyFlutterApp.github,
-                  url: WelcomeView.urls["github"]!,
+                  messageTip: 'GitHub',
+                  url: urls["github"]!,
                 ),
                 _buildSocialButton(
                   icon: MyFlutterApp.twitter,
-                  url: WelcomeView.urls["twitter"]!,
+                  messageTip: 'Twitter',
+                  url: urls["twitter"]!,
                 ),
               ]),
         ]),
@@ -130,9 +133,11 @@ class _WelcomeViewState extends State<WelcomeView> {
   Widget _buildSocialButton({
     required IconData icon,
     required String url,
+    required String messageTip,
   }) =>
       IconButton(
           onPressed: () async => await launchUrl(Uri.parse(url)),
+          tooltip: messageTip,
           icon: Icon(
             icon,
             color: isDarkMode ? dark_mode.background : light_mode.background,
@@ -180,19 +185,17 @@ class _WelcomeViewState extends State<WelcomeView> {
                     // =============================================
                     const SizedBox(height: 24),
                     SelectableText(
-                      WelcomeView.aboutMe,
+                      aboutMe,
                       style: isDarkMode ? dark_mode.about : light_mode.about,
                     ),
                     const SizedBox(height: 18),
                     SelectableText(
-                      WelcomeView.aboutMe2,
+                      aboutMe2,
                       style: GoogleFonts.quicksand(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                         letterSpacing: 1,
-                        color: isDarkMode
-                            ? Colors.grey[400]
-                            : WelcomeView.secondary,
+                        color: isDarkMode ? Colors.grey[400] : secondary,
                       ),
                     ),
                     const SizedBox(height: 22),
@@ -201,17 +204,18 @@ class _WelcomeViewState extends State<WelcomeView> {
                       runSpacing: 10,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () async =>
+                              await launchUrl(Uri.parse(urls['cv']!)),
                           style: ElevatedButton.styleFrom(
                             shape: const StadiumBorder(),
                             side: const BorderSide(
-                              color: WelcomeView.primary,
+                              color: primary,
                               width: 2,
                             ),
                             padding: const EdgeInsets.all(20),
                             backgroundColor:
                                 isDarkMode ? Colors.transparent : Colors.white,
-                            foregroundColor: WelcomeView.primary,
+                            foregroundColor: primary,
                             fixedSize: const Size(140, 40),
                             textStyle: const TextStyle(letterSpacing: 1),
                           ),
@@ -222,10 +226,9 @@ class _WelcomeViewState extends State<WelcomeView> {
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             shape: const StadiumBorder(),
-                            foregroundColor: isDarkMode
-                                ? WelcomeView.secondary
-                                : Colors.white,
-                            backgroundColor: WelcomeView.primary,
+                            foregroundColor:
+                                isDarkMode ? secondary : Colors.white,
+                            backgroundColor: primary,
                             padding: const EdgeInsets.all(20),
                             fixedSize: const Size(140, 40),
                             textStyle: const TextStyle(

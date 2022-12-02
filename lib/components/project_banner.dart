@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/projects.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BannerProject extends StatefulWidget {
   const BannerProject({
     super.key,
     required this.project,
     required this.imagePath,
+    required this.bg,
+    required this.normalStyle,
+    required this.smallStyle,
+    required this.repository,
   });
+
+  final Color bg;
+  final TextStyle normalStyle;
+  final TextStyle smallStyle;
 
   final String imagePath;
   final Project project;
+  final String repository;
 
   @override
   State<BannerProject> createState() => _BannerProjectState();
@@ -74,7 +84,9 @@ class _BannerProjectState extends State<BannerProject> {
                             ),
                             IconButton(
                               padding: const EdgeInsets.all(0),
-                              onPressed: () {},
+                              tooltip: 'Source Code',
+                              onPressed: () async =>
+                                  await launchUrl(Uri.parse(widget.repository)),
                               icon: const Icon(Icons.code, size: 22),
                             ),
                           ],
@@ -86,9 +98,9 @@ class _BannerProjectState extends State<BannerProject> {
                           duration: const Duration(seconds: 1),
                           width: _isMouseAbove ? 120 : 0,
                           height: 66,
-                          decoration: const BoxDecoration(
-                            color: Color.fromARGB(255, 30, 30, 30),
-                            borderRadius: BorderRadius.only(
+                          decoration: BoxDecoration(
+                            color: widget.bg,
+                            borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(10),
                               bottomLeft: Radius.circular(10),
                             ),
@@ -102,11 +114,7 @@ class _BannerProjectState extends State<BannerProject> {
                                 widget.project.techStack.length,
                                 (index) => Text(
                                   widget.project.techStack[index],
-                                  style: TextStyle(
-                                    color: Colors.grey[400],
-                                    fontSize: 12,
-                                    letterSpacing: 1,
-                                  ),
+                                  style: widget.smallStyle,
                                 ),
                               ),
                             ),
@@ -122,9 +130,9 @@ class _BannerProjectState extends State<BannerProject> {
             padding: const EdgeInsets.all(16.0),
             width: _isMouseAbove ? 280 : 0,
             height: 160,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 30, 30, 30),
-              borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+              color: widget.bg,
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(10),
                 bottomRight: Radius.circular(10),
               ),
@@ -133,13 +141,10 @@ class _BannerProjectState extends State<BannerProject> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(widget.project.description,
-                    style: TextStyle(
-                      color: Colors.grey[400],
-                      fontSize: 14,
-                      height: 1.4,
-                      letterSpacing: 1,
-                    ))
+                Text(
+                  widget.project.description,
+                  style: widget.normalStyle,
+                ),
               ],
             ),
           ),
