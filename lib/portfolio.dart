@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/contacts.dart';
 import 'package:portfolio/projects.dart';
 
 import 'home.dart';
@@ -21,7 +20,6 @@ class _PortfolioState extends State<Portfolio> {
       children: [
         HomeView(isDarkMode: _isDarkMode, changeMode: _changeMode),
         ProjectsView(isDarkMode: _isDarkMode, changeMode: _changeMode),
-        ContactsView(isDarkMode: _isDarkMode),
       ],
     ));
   }
