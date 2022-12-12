@@ -38,6 +38,135 @@ class HomeView extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
+    if (width <= 600) {
+      return SizedBox(
+        width: width,
+        height: height,
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Column(children: [
+              Container(
+                padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
+                color: isDarkMode ? dark_mode.primary : light_mode.primary,
+                height: 0.3 * height,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // My name written largely
+                    SelectableText('Gabriel Bento',
+                        style: GoogleFonts.sacramento(
+                          color: isDarkMode
+                              ? dark_mode.background
+                              : light_mode.background,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                        )),
+                    // Change mode button
+                    IconButton(
+                      padding: const EdgeInsets.all(0),
+                      icon: Icon(
+                        isDarkMode ? Icons.dark_mode : Icons.light_mode,
+                        color: isDarkMode
+                            ? dark_mode.background
+                            : light_mode.background,
+                        size: 24,
+                      ),
+                      onPressed: changeMode,
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 0.1 * width),
+                color:
+                    isDarkMode ? dark_mode.background : light_mode.background,
+                width: width,
+                height: 0.7 * height,
+                child: SizedBox(
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(height: 0.15 * height),
+                        FittedBox(
+                          fit: BoxFit.fitHeight,
+                          child: SelectableText(
+                            'Flutter Developer',
+                            style: isDarkMode
+                                ? dark_mode.subTitleStyle
+                                : light_mode.subTitleStyle,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        FittedBox(
+                          fit: BoxFit.fitHeight,
+                          child: SelectableText(
+                            'Gabriel Bento',
+                            style: isDarkMode
+                                ? dark_mode.titleStyle
+                                : light_mode.titleStyle,
+                          ),
+                        ),
+                        // Small warning advising this is not done yet
+                        const SizedBox(height: 24),
+                        SelectableText(
+                          aboutMe,
+                          style:
+                              isDarkMode ? dark_mode.about : light_mode.about,
+                        ),
+                        const SizedBox(height: 18),
+                        SelectableText(
+                          aboutMe2,
+                          style:
+                              isDarkMode ? dark_mode.about : light_mode.about,
+                        ),
+                        const SizedBox(height: 22),
+                        ElevatedButton(
+                          onPressed: () async =>
+                              await launchUrl(Uri.parse(urls['cv']!)),
+                          style: ElevatedButton.styleFrom(
+                            shape: const StadiumBorder(),
+                            foregroundColor: isDarkMode
+                                ? dark_mode.background
+                                : light_mode.background,
+                            backgroundColor: primary,
+                            padding: const EdgeInsets.all(20),
+                            fixedSize: const Size(180, 50),
+                            textStyle: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.2,
+                            ),
+                          ),
+                          child: const FittedBox(
+                            fit: BoxFit.none,
+                            child: Text('Download CV'),
+                          ),
+                        ),
+                      ]),
+                ),
+              ),
+            ]),
+            Positioned(
+              top: 0.3 * height - 1 / 8 * height,
+              child: CircleAvatar(
+                backgroundColor:
+                    isDarkMode ? dark_mode.background : light_mode.background,
+                radius: 1 / 8 * height + 8,
+                child: CircleAvatar(
+                  foregroundImage: const AssetImage('assets/images/me.jpg'),
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: Colors.transparent,
+                  radius: 1 / 8 * height,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return SizedBox(
       width: width,
       height: height,
@@ -93,6 +222,9 @@ class HomeView extends StatelessWidget {
     );
   }
 
+  // ===============================================================
+  // Widgets for large screen's width
+  // ===============================================================
   Widget _buildLeftPanel() => Container(
         padding: const EdgeInsets.fromLTRB(40, 20, 0, 15),
         color: primary,
@@ -170,20 +302,6 @@ class HomeView extends StatelessWidget {
                     ),
                     // Small warning advising this is not done yet
                     const SizedBox(height: 24),
-                    Row(children: [
-                      const Icon(Icons.error_rounded, color: Colors.deepOrange),
-                      const SizedBox(width: 10),
-                      Flexible(
-                        child: SelectableText(
-                          'This site is not done yet. You might experience some errors.',
-                          style: isDarkMode
-                              ? dark_mode.subTitleStyle
-                              : light_mode.subTitleStyle,
-                        ),
-                      ),
-                    ]),
-                    // =============================================
-                    const SizedBox(height: 24),
                     SelectableText(
                       aboutMe,
                       style: isDarkMode ? dark_mode.about : light_mode.about,
@@ -199,51 +317,30 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 22),
-                    Wrap(
-                      direction: Axis.horizontal,
-                      runSpacing: 10,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () async =>
-                              await launchUrl(Uri.parse(urls['cv']!)),
-                          style: ElevatedButton.styleFrom(
-                            shape: const StadiumBorder(),
-                            side: const BorderSide(
-                              color: primary,
-                              width: 2,
-                            ),
-                            padding: const EdgeInsets.all(20),
-                            backgroundColor:
-                                isDarkMode ? Colors.transparent : Colors.white,
-                            foregroundColor: primary,
-                            fixedSize: const Size(140, 40),
-                            textStyle: const TextStyle(letterSpacing: 1),
-                          ),
-                          child: const Text('Download CV'),
+                    ElevatedButton(
+                      onPressed: () async =>
+                          await launchUrl(Uri.parse(urls['cv']!)),
+                      style: ElevatedButton.styleFrom(
+                        shape: const StadiumBorder(),
+                        foregroundColor: isDarkMode ? secondary : Colors.white,
+                        backgroundColor: primary,
+                        padding: const EdgeInsets.all(20),
+                        fixedSize: const Size(140, 40),
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.2,
                         ),
-                        const SizedBox(width: 20),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            shape: const StadiumBorder(),
-                            foregroundColor:
-                                isDarkMode ? secondary : Colors.white,
-                            backgroundColor: primary,
-                            padding: const EdgeInsets.all(20),
-                            fixedSize: const Size(140, 40),
-                            textStyle: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1.2,
-                            ),
-                          ),
-                          child: const Text('Contact'),
-                        ),
-                      ],
+                      ),
+                      child: const Text('Download CV'),
                     ),
-                    const SizedBox(height: 20),
                   ]),
             ),
           ],
         ),
       );
+  // ===============================================================
+
+  // ===============================================================
+  // Widgets for small screen's width
+  // ===============================================================
 }
