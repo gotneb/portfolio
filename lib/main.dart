@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/portfolio.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:portfolio/app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
       title: 'Gabriel Bento - Portfolio',
-      home: Portfolio(),
+      home: App(),
     );
   }
 }
