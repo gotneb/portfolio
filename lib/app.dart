@@ -28,7 +28,7 @@ class App extends StatelessWidget {
   }) =>
       Container(
         width: useFullWidth ? width : .8 * width,
-        padding: const EdgeInsets.symmetric(horizontal: 64),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         height: height,
         color: Colors.blue,
         child: const HomeView(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio/models/language.dart';
 import 'package:portfolio/models/me.dart';
 
 class LanguageSection extends StatelessWidget {
