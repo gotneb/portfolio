@@ -5,6 +5,7 @@ import 'package:portfolio/views/home/section_buttons.dart';
 import 'package:portfolio/views/home/section_language.dart';
 import 'package:portfolio/views/home/section_projects.dart';
 
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -31,23 +32,31 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
 
-    return ListView(
-      shrinkWrap: true,
-      children: [
-        Gap(0.1 * height),
-        const AboutSection(),
-        const Gap(32),
-        const ButtonsSection(),
-        const Gap(32),
-        _buildTitle(title: 'Languages', hiragana: '私が話す言語'),
-        const Gap(32),
-        const LanguageSection(),
-        const Gap(32),
-        _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
-        const Gap(32),
-        const ProjectsSection(),
-        const Gap(48),
-      ],
+    return ScrollConfiguration(
+      // Hide annoying scrollbar
+      behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+      child: ListView(
+        shrinkWrap: true,
+        children: [
+          Gap(0.1 * height),
+          const AboutSection(),
+          const Gap(32),
+          const ButtonsSection(),
+          const Gap(32),
+          _buildTitle(title: 'Languages', hiragana: '私が話す言語'),
+          const Gap(4),
+          const LanguageSection(),
+          const Gap(32),
+          _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
+          const Gap(32),
+          const ProjectsSection(),
+          // const Gap(32),
+          // _buildTitle(title: 'Screenshots', hiragana: 'ビデオゲームのスクリーンショット'),
+          // const Gap(32),
+          // const GamesSection(),
+          const Gap(48),
+        ],
+      ),
     );
   }
 }
