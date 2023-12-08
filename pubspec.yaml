@@ -19,6 +19,7 @@ dependencies:
   gap: ^3.0.1
   flutter_svg: ^2.0.9
   flutter_custom_clippers: ^2.1.0
+  font_awesome_flutter: ^10.6.0
 
 dev_dependencies:
   flutter_test:
