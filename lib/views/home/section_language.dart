@@ -48,8 +48,9 @@ class LanguageSection extends StatelessWidget {
     final width = MediaQuery.sizeOf(context).width;
 
     return Container(
-        width: double.maxFinite,
+        margin: const EdgeInsets.only(right: 70),
         padding: const EdgeInsets.all(20),
+        width: double.maxFinite,
         color: Colors.teal,
         child: Wrap(
           spacing: 0.04 * width,
