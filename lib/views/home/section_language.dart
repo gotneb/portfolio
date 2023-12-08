@@ -6,6 +6,8 @@ import 'package:portfolio/models/me.dart';
 class LanguageSection extends StatelessWidget {
   const LanguageSection({super.key});
 
+  static const double radius = 50;
+
   Widget _buildCard(Language language) {
     Widget flag = CircleAvatar(
       radius: 24,
@@ -47,15 +49,26 @@ class LanguageSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
 
-    return Container(
-        margin: const EdgeInsets.only(right: 70),
-        padding: const EdgeInsets.all(20),
-        width: double.maxFinite,
-        color: Colors.teal,
-        child: Wrap(
-          spacing: 0.04 * width,
-          runSpacing: 20,
-          children: Me.languages.map((l) => _buildCard(l)).toList(),
-        ));
+    const photo = CircleAvatar(
+      radius: radius,
+      foregroundImage: AssetImage('assets/images/seiji_amasawa2.jpg'),
+    );
+
+    return Stack(alignment: Alignment.topRight, children: [
+      Container(
+          margin: const EdgeInsets.only(right: 90, top: 28),
+          padding: const EdgeInsets.all(20),
+          width: double.maxFinite,
+          color: Colors.teal,
+          child: Wrap(
+            spacing: 0.04 * width,
+            runSpacing: 20,
+            children: Me.languages.map((l) => _buildCard(l)).toList(),
+          )),
+      const Positioned(
+        right: radius,
+        child: photo,
+      ),
+    ]);
   }
 }

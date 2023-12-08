@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 class ButtonsSection extends StatelessWidget {
@@ -9,11 +10,13 @@ class ButtonsSection extends StatelessWidget {
     required IconData icon,
   }) =>
       Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
         color: Colors.red,
         child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Icon(icon, color: Colors.white),
-          const Gap(8),
+          FaIcon(icon, color: Colors.white, size: 44),
+          const Gap(16),
+          Container(width: 1, height: 44, color: Colors.black),
+          const Gap(16),
           Text(text),
         ]),
       );
@@ -21,13 +24,13 @@ class ButtonsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final buttons = {
-      'LinkedIn': Icons.home,
-      'GitHub': Icons.home,
-      'Contact': Icons.home,
+      'LinkedIn': FontAwesomeIcons.linkedin,
+      'GitHub': FontAwesomeIcons.github,
+      'Contact': FontAwesomeIcons.inbox,
     };
 
     return Wrap(
-        spacing: 20,
+        spacing: 35,
         runSpacing: 10,
         children: buttons.entries
             .map((e) => _buildButton(
