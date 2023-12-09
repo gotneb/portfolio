@@ -3,6 +3,8 @@ import 'dart:math' as math;
 import 'package:gap/gap.dart';
 import 'package:portfolio/views/home/home.dart';
 
+import 'style.dart';
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -14,10 +16,21 @@ class App extends StatelessWidget {
       return _buildCenter(width, height, useFullWidth: true);
     }
 
-    return Row(children: [
+    final background = Image.asset(
+      'assets/images/background.png',
+      width: width,
+      height: height,
+    );
+
+    final content = Row(children: [
       _buildLeftPanel(width, height, title: 'FOLIO', hiragana: 'ポートフォリオ'),
       _buildCenter(width, height),
       _buildRightPanel(width, height, title: 'ABOUT', hiragana: 'この人について'),
+    ]);
+
+    return Stack(children: [
+      background,
+      content,
     ]);
   }
 
@@ -30,7 +43,7 @@ class App extends StatelessWidget {
         width: useFullWidth ? width : .8 * width,
         padding: const EdgeInsets.symmetric(horizontal: 12),
         height: height,
-        color: Colors.blue,
+        color: Colors.orange,
         child: const HomeView(),
       );
 
@@ -79,9 +92,9 @@ class App extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(title),
+                Text(title, style: Style.sideTitle),
                 const Gap(8),
-                Text(hiragana),
+                Text(hiragana, style: Style.japaneseSideTitle),
               ]),
         ),
       );

@@ -5,17 +5,26 @@ import 'package:portfolio/views/home/section_buttons.dart';
 import 'package:portfolio/views/home/section_language.dart';
 import 'package:portfolio/views/home/section_projects.dart';
 
+import 'package:portfolio/style.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
-  Widget _buildHiragana(String text) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-        decoration: const ShapeDecoration(
-          shape: StadiumBorder(),
-          color: Colors.white,
+  Widget _buildHiragana(
+    String text, {
+    required TextStyle style,
+  }) =>
+      Material(
+        elevation: 16,
+        color: Colors.transparent,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+          decoration: const ShapeDecoration(
+            shape: StadiumBorder(),
+            color: Colors.white,
+          ),
+          child: Text(text, style: style),
         ),
-        child: Text(text),
       );
 
   Widget _buildTitle({
@@ -23,9 +32,9 @@ class HomeView extends StatelessWidget {
     required String hiragana,
   }) =>
       Row(children: [
-        Text(title),
+        Text(title, style: Style.normalTitleStyle),
         const Gap(12),
-        _buildHiragana(hiragana),
+        _buildHiragana(hiragana, style: Style.normalJpTitleStyle),
       ]);
 
   @override

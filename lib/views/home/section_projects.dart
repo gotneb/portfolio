@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/models/me.dart';
 import 'package:portfolio/models/project.dart';
+import 'package:portfolio/style.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -16,29 +17,37 @@ class ProjectsSection extends StatelessWidget {
 
     final badges = project.stack
         .map((e) => Padding(
-          padding: const EdgeInsets.only(right: 12),
+              padding: const EdgeInsets.only(right: 12),
               child: e.logo,
             ))
         .toList();
 
-    return Container(
-      padding: const EdgeInsets.all(12),
-      width: side,
-      height: side,
-      color: Colors.grey,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(project.title),
-        const Gap(16),
-        Flexible(
-          child: Text(
+    return Material(
+      elevation: 12,
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(18),
+      child: Container(
+        padding: const EdgeInsets.all(22),
+        width: side,
+        height: side,
+        decoration: BoxDecoration(
+          color: Colors.grey,
+          borderRadius: BorderRadius.circular(18),
+        ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(project.title, style: Style.titleProject),
+          const Gap(16),
+          Flexible(
+              child: Text(
             project.description,
             softWrap: true,
             overflow: TextOverflow.fade,
-          ),
-        ),
-        const Gap(24),
-        Row(children: badges),
-      ]),
+            style: Style.descriptionProject,
+          )),
+          const Gap(24),
+          Row(children: badges),
+        ]),
+      ),
     );
   }
 

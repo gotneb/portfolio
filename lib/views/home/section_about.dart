@@ -2,21 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/models/me.dart';
 
+import 'package:portfolio/style.dart';
+
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
+
+  static final borderRadius = BorderRadius.circular(16);
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
     
-    final photo = Image.asset(
-      'assets/images/my_photo2.jpg',
-      width: 300,
-      height: 300,
+    final photo = Material(
+      borderRadius: borderRadius,
+      color: Colors.transparent,
+      elevation: 12,
+      child: ClipRRect(
+        borderRadius: borderRadius,
+        child: Image.asset(
+          'assets/images/my_photo2.jpg',
+          width: 300,
+          height: 300,
+        ),
+      ),
     );
 
     buildColumnData({bool showPhoto = false}) => Container(
-          height: showPhoto ? 600 : 300,
+          height: showPhoto ? 750 : 300,
           color: Colors.red,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -26,11 +38,11 @@ class AboutSection extends StatelessWidget {
                 photo,
                 const Gap(24),
               ],
-              const Text(Me.name),
+              Text(Me.name, style: Style.titleStyle,),
               const Gap(8),
-              const Text(Me.job),
+              Text(Me.job, style: Style.subTitleStyle),
               const Gap(8),
-              const Flexible(child: Text(Me.about)),
+              Flexible(child: Text(Me.about, style: Style.normalStyle)),
             ],
           ),
         );
