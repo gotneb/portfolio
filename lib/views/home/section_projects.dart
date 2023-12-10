@@ -31,8 +31,9 @@ class ProjectsSection extends StatelessWidget {
         width: side,
         height: side,
         decoration: BoxDecoration(
-          color: Colors.grey,
+          color: Colors.black.withOpacity(0.4),
           borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: Style.greyColor),
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(project.title, style: Style.titleProject),
@@ -67,13 +68,10 @@ class ProjectsSection extends StatelessWidget {
             ))
         .toList();
 
-    return Container(
-      color: Colors.orange,
-      child: Wrap(
-        spacing: 20,
-        runSpacing: 20,
-        children: projects,
-      ),
+    return Wrap(
+      spacing: 20,
+      runSpacing: 20,
+      children: projects,
     );
   }
 }

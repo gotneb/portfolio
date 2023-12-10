@@ -1,3 +1,4 @@
+import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:gap/gap.dart';
@@ -12,15 +13,29 @@ class App extends StatelessWidget {
     final width = MediaQuery.sizeOf(context).width;
     final height = MediaQuery.sizeOf(context).height;
 
-    if (width < 1500) {
-      return _buildCenter(width, height, useFullWidth: true);
-    }
-
     final background = Image.asset(
       'assets/images/background.png',
       width: width,
       height: height,
+      fit: BoxFit.cover,
+    ).blurred(
+      blur: 15,
+      blurColor: Colors.black,
     );
+
+    final black = Container(
+      width: width,
+      height: height,
+      color: Colors.black.withOpacity(0.5),
+    );
+
+    if (width < 1500) {
+      return Stack(alignment: Alignment.bottomCenter, children: [
+        background,
+        black,
+        _buildCenter(width, height, useFullWidth: true),
+      ]);
+    }
 
     final content = Row(children: [
       _buildLeftPanel(width, height, title: 'FOLIO', hiragana: 'ポートフォリオ'),
@@ -28,8 +43,9 @@ class App extends StatelessWidget {
       _buildRightPanel(width, height, title: 'ABOUT', hiragana: 'この人について'),
     ]);
 
-    return Stack(children: [
+    return Stack(alignment: Alignment.bottomCenter, children: [
       background,
+      black,
       content,
     ]);
   }
@@ -43,7 +59,6 @@ class App extends StatelessWidget {
         width: useFullWidth ? width : .8 * width,
         padding: const EdgeInsets.symmetric(horizontal: 12),
         height: height,
-        color: Colors.orange,
         child: const HomeView(),
       );
 
@@ -82,10 +97,9 @@ class App extends StatelessWidget {
     required String hiragana,
     required double textRotation,
   }) =>
-      Container(
+      SizedBox(
         width: 0.1 * width,
         height: height,
-        color: Colors.grey,
         child: Transform.rotate(
           angle: textRotation,
           child: Column(

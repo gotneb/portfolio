@@ -3,8 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Style {
   static const mainColor = Colors.white;
-  static const sideColor = Colors.blue;
+  static const greyColor = Colors.grey;
+  static const sideColor = Color(0xFF7067cf);
   static const sideColor2 = Colors.black;
+
+  static const Color black = Color(0xFF232528);
+  static const Color black2 = Color(0xFF100b00);
 
   static const textShadow = Shadow(
     color: Colors.black,
@@ -68,9 +72,9 @@ class Style {
   );
 
   static final langNormal = GoogleFonts.notoSansJp(
-    color: mainColor,
+    color: mainColor.withOpacity(0.85),
     fontSize: 14,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w500,
   );
 
   // ********************************************************
@@ -83,7 +87,7 @@ class Style {
   );
 
   static final descriptionProject = GoogleFonts.roboto(
-    color: mainColor,
+    color: greyColor,
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );

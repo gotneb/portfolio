@@ -29,7 +29,7 @@ class LanguageSection extends StatelessWidget {
       width: 10,
       height: height,
       decoration: const BoxDecoration(
-        color: Colors.black,
+        color: Style.sideColor,
         borderRadius: coloredBorderRadius,
       ),
     );
@@ -41,6 +41,7 @@ class LanguageSection extends StatelessWidget {
       const Gap(6),
       _buildProficiencyText(language.profiency,
           style: Style.langNormal.copyWith(
+            fontSize: 12,
             color: Style.sideColor,
           )),
       const Gap(8),
@@ -54,7 +55,7 @@ class LanguageSection extends StatelessWidget {
         width: 300,
         height: height,
         decoration: BoxDecoration(
-          color: Colors.pink,
+          color: Style.black2,
           borderRadius: boxBorderRadius,
         ),
         child: Row(
@@ -79,7 +80,7 @@ class LanguageSection extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
         decoration: const ShapeDecoration(
             shape: StadiumBorder(
-          side: BorderSide(color: Colors.greenAccent),
+          side: BorderSide(color: Style.sideColor),
         )),
         child: Text(data, style: style),
       );
@@ -94,28 +95,31 @@ class LanguageSection extends StatelessWidget {
       borderRadius: BorderRadius.circular(photoRadius),
       child: const CircleAvatar(
         radius: photoRadius,
-        foregroundImage: AssetImage('assets/images/seiji_amasawa2.jpg'),
+        foregroundImage: AssetImage('assets/images/seiji_amasawa.jpg'),
       ),
     );
 
-    return Stack(alignment: Alignment.topRight, children: [
-      Container(
-          margin: const EdgeInsets.only(right: 90, top: 28),
-          padding: const EdgeInsets.all(20),
-          width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: Colors.teal,
-            borderRadius: boxBorderRadius,
-          ),
-          child: Wrap(
-            spacing: 0.04 * width,
-            runSpacing: 20,
-            children: Me.languages.map((l) => _buildCard(l)).toList(),
-          )),
-      Positioned(
-        right: photoRadius,
-        child: photo,
-      ),
-    ]);
+    return Stack(
+      alignment: Alignment.topRight,
+      children: [
+        Container(
+            margin: const EdgeInsets.only(right: 90, top: 28),
+            padding: const EdgeInsets.all(12),
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+              color: Style.black,
+              borderRadius: boxBorderRadius,
+            ),
+            child: Wrap(
+              spacing: 0.04 * width,
+              runSpacing: 20,
+              children: Me.languages.map((l) => _buildCard(l)).toList(),
+            )),
+        Positioned(
+          right: photoRadius,
+          child: photo,
+        ),
+      ],
+    );
   }
 }

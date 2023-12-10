@@ -22,7 +22,7 @@ class ButtonsSection extends StatelessWidget {
       child: Row(mainAxisSize: MainAxisSize.min, children: [
         FaIcon(icon, color: Colors.white, size: 44),
         const Gap(16),
-        Container(width: 1, height: 44, color: Colors.black),
+        Container(width: 1, height: 44, color: Colors.white),
         const Gap(16),
         Text(text, style: Style.normalStyle),
       ]),

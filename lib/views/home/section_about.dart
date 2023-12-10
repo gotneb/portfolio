@@ -27,9 +27,8 @@ class AboutSection extends StatelessWidget {
       ),
     );
 
-    buildColumnData({bool showPhoto = false}) => Container(
+    buildColumnData({bool showPhoto = false}) => SizedBox(
           height: showPhoto ? 750 : 300,
-          color: Colors.red,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
