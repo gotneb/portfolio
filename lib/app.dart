@@ -14,7 +14,7 @@ class App extends StatelessWidget {
     final height = MediaQuery.sizeOf(context).height;
 
     final background = Image.asset(
-      'assets/images/background.png',
+      'assets/images/art.jpg',
       width: width,
       height: height,
       fit: BoxFit.cover,
@@ -23,31 +23,37 @@ class App extends StatelessWidget {
       blurColor: Colors.black,
     );
 
-    final black = Container(
-      width: width,
-      height: height,
-      color: Colors.black.withOpacity(0.5),
-    );
-
     if (width < 1500) {
       return Stack(alignment: Alignment.bottomCenter, children: [
         background,
-        black,
         _buildCenter(width, height, useFullWidth: true),
       ]);
     }
 
-    final content = Row(children: [
-      _buildLeftPanel(width, height, title: 'FOLIO', hiragana: 'ポートフォリオ'),
-      _buildCenter(width, height),
-      _buildRightPanel(width, height, title: 'ABOUT', hiragana: 'この人について'),
-    ]);
+    // final content = Row(children: [
+    //   //_buildLeftPanel(width, height, title: 'FOLIO', hiragana: 'ポートフォリオ'),
+    //   _buildCenter(width, height),
+    //   //_buildRightPanel(width, height, title: 'ABOUT', hiragana: 'この人について'),
+    // ]);
 
-    return Stack(alignment: Alignment.bottomCenter, children: [
-      background,
-      black,
-      content,
-    ]);
+    final content = _buildCenter(width, height);
+
+    return Stack(
+      children: [
+        background,
+        content,
+        Align(
+          alignment: Alignment.centerLeft,
+          child: _buildLeftPanel(width, height,
+              title: 'FOLIO', hiragana: 'ポートフォリオ'),
+        ),
+        Align(
+          alignment: Alignment.centerRight,
+          child: _buildRightPanel(width, height,
+              title: 'ABOUT', hiragana: 'この人について'),
+        ),
+      ],
+    );
   }
 
   Widget _buildCenter(
@@ -56,9 +62,17 @@ class App extends StatelessWidget {
     bool useFullWidth = false,
   }) =>
       Container(
-        width: useFullWidth ? width : .8 * width,
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: EdgeInsets.symmetric(horizontal: useFullWidth ? 12 : 0.1 * width),
+        width: width,
         height: height,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.4, 0.55],
+            colors: [Colors.transparent, Style.black2]
+          ),
+        ),
         child: const HomeView(),
       );
 

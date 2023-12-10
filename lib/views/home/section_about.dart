@@ -29,20 +29,23 @@ class AboutSection extends StatelessWidget {
 
     buildColumnData({bool showPhoto = false}) => SizedBox(
           height: showPhoto ? 750 : 300,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (showPhoto) ...[
-                photo,
-                const Gap(24),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 80.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (showPhoto) ...[
+                  photo,
+                  const Gap(24),
+                ],
+                Text(Me.name, style: Style.titleStyle,),
+                const Gap(8),
+                Text(Me.job, style: Style.subTitleStyle),
+                const Gap(8),
+                Flexible(child: Text(Me.about, style: Style.normalStyle)),
               ],
-              Text(Me.name, style: Style.titleStyle,),
-              const Gap(8),
-              Text(Me.job, style: Style.subTitleStyle),
-              const Gap(8),
-              Flexible(child: Text(Me.about, style: Style.normalStyle)),
-            ],
+            ),
           ),
         );
 

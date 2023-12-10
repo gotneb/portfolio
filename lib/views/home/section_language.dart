@@ -115,10 +115,10 @@ class LanguageSection extends StatelessWidget {
               runSpacing: 20,
               children: Me.languages.map((l) => _buildCard(l)).toList(),
             )),
-        Positioned(
-          right: photoRadius,
-          child: photo,
-        ),
+        // Positioned(
+        //   right: photoRadius,
+        //   child: photo,
+        // ),
       ],
     );
   }

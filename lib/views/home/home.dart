@@ -45,9 +45,8 @@ class HomeView extends StatelessWidget {
       // Hide annoying scrollbar
       behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
       child: ListView(
-        shrinkWrap: true,
         children: [
-          Gap(0.1 * height),
+          Gap(0.38 * height),
           const AboutSection(),
           const Gap(32),
           const ButtonsSection(),
@@ -59,10 +58,6 @@ class HomeView extends StatelessWidget {
           _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
           const Gap(32),
           const ProjectsSection(),
-          // const Gap(32),
-          // _buildTitle(title: 'Screenshots', hiragana: 'ビデオゲームのスクリーンショット'),
-          // const Gap(32),
-          // const GamesSection(),
           const Gap(48),
         ],
       ),
