@@ -1,4 +1,5 @@
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/widgets.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 class TechBadge {
   const TechBadge({
@@ -7,46 +8,39 @@ class TechBadge {
   });
 
   final String name;
-  final SvgPicture logo;
+  final IconData logo;
 
   static const defaultSize = 48.0;
 
-  static final rust = TechBadge(
+  static const rust = TechBadge(
     name: 'Rust',
-    logo: SvgPicture.network('assets/images/svgs/rust.svg',
-        width: defaultSize, height: defaultSize),
+    logo: FontAwesome.rust,
   );
 
-  static final golang = TechBadge(
+  static const golang = TechBadge(
     name: 'Golang',
-    logo: SvgPicture.network('assets/images/svgs/golang.svg',
-        width: defaultSize, height: defaultSize),
+    logo: FontAwesome.golang,
   );
 
-  static final csharp = TechBadge(
+  static const csharp = TechBadge(
     name: 'C#',
-    logo: SvgPicture.network('assets/images/svgs/csharp.svg',
-        width: defaultSize, height: defaultSize),
+    logo: FontAwesome.c,
   );
 
-  static final python = TechBadge(
+  static const python = TechBadge(
     name: 'Python',
-    logo: SvgPicture.network('assets/images/svgs/python.svg',
-        width: defaultSize, height: defaultSize),
+    logo: FontAwesome.python,
   );
-  static final mongodb = TechBadge(
+  static const mongodb = TechBadge(
     name: 'MongoDB',
-    logo: SvgPicture.network('assets/images/svgs/mongodb.svg',
-        width: defaultSize, height: defaultSize),
+    logo: FontAwesome.database,
   );
-  static final flutter = TechBadge(
+  static const flutter = TechBadge(
     name: 'Flutter',
-    logo: SvgPicture.network('assets/images/svgs/flutter.svg',
-        width: defaultSize, height: defaultSize),
+    logo: FontAwesome.weebly,
   );
-  static final cplusplus = TechBadge(
+  static const cplusplus = TechBadge(
     name: 'C++',
-    logo: SvgPicture.network('assets/images/svgs/cpp.svg',
-        width: defaultSize, height: defaultSize),
+    logo: FontAwesome.c,
   );
 }
