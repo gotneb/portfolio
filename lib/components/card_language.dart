@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/models/language.dart';
 import 'package:portfolio/style.dart';
@@ -8,18 +9,19 @@ class CardLanguage extends StatefulWidget {
   const CardLanguage({
     super.key,
     required this.language,
+    required this.height,
+    required this.width,
   });
 
   final Language language;
+  final double height;
+  final double width;
 
   @override
   State<CardLanguage> createState() => _CardLanguageState();
 }
 
 class _CardLanguageState extends State<CardLanguage> {
-  static const double width = 300;
-  static const double height = 120;
-
   static const double radius = 16;
   static final boxBorderRadius = BorderRadius.circular(radius);
   static const coloredBorderRadius = BorderRadius.only(
@@ -56,7 +58,7 @@ class _CardLanguageState extends State<CardLanguage> {
 
     final coloredIndicator = Container(
       width: 10,
-      height: height,
+      height: widget.height,
       decoration: const BoxDecoration(
         color: Style.sideColor,
         borderRadius: coloredBorderRadius,
@@ -105,37 +107,42 @@ class _CardLanguageState extends State<CardLanguage> {
           const Gap(12),
         ]);
 
-    final card = AnimatedContainer(
-      duration: duration,
-      curve: curve,
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        color: isMouseInside ? Style.black2 : Style.black,
-        border: Border.all(
-          color: Style.greyColor,
-          width: 0.7,
+    final card = ConstrainedBox(
+      constraints: const BoxConstraints(minWidth: 320),
+      child: AnimatedContainer(
+        duration: duration,
+        curve: curve,
+        width: widget.width,
+        height: widget.height,
+        decoration: BoxDecoration(
+          color: isMouseInside ? Style.blue : Style.blue2,
+          border: Border.all(
+            color: Colors.white.withOpacity(0.1),
+          ),
+          borderRadius: boxBorderRadius,
         ),
-        borderRadius: boxBorderRadius,
+        child: row,
       ),
-      child: row,
     );
 
     return Material(
       elevation: 12,
       color: Colors.transparent,
       child: MouseRegion(
-        onEnter: (event) => setState(() {
-          isMouseInside = true;
-        }),
-        onExit: (event) => setState(() {
-          isMouseInside = false;
-        }),
-        child: Transform.translate(
-          offset: Offset(0, isMouseInside ? -8 : 0),
-          child: card,
-        ),
-      ),
+          onEnter: onEnter,
+          onExit: onExit,
+          child: Transform.translate(
+            offset: Offset(0, isMouseInside ? -8 : 0),
+            child: card,
+          )),
     );
   }
+
+  void onEnter(PointerEnterEvent e) => setState(() {
+        isMouseInside = true;
+      });
+
+  void onExit(PointerExitEvent e) => setState(() {
+        isMouseInside = false;
+      });
 }

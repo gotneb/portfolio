@@ -11,7 +11,10 @@ class Style {
   static const Color black = Color(0xFF232528);
   static const Color black2 = Color(0xFF100b00);
 
-  static const Color background = black2;
+  static const Color blue = Color(0xFF111525);
+  static const Color blue2 = Color(0xFF191F36);
+
+  static const Color background = blue;
 
   static const textShadow = Shadow(
     color: Colors.black,
