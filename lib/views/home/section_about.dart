@@ -57,7 +57,7 @@ class AboutSection extends StatelessWidget {
                 ])));
 
     final background = Image.asset(
-      'assets/images/art.jpg',
+      'assets/images/horizon.jpg',
       width: width,
       height: 0.7 * height,
       fit: BoxFit.cover,
@@ -78,11 +78,11 @@ class AboutSection extends StatelessWidget {
     final content = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Gap(0.42 * height),
+        Gap(0.46 * height),
         Row(
           children: [
             photo,
-            const Gap(24),
+            const Gap(32),
             Flexible(child: buildColumnData()),
           ],
         ),

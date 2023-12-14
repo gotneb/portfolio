@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class Style {
   static const mainColor = Colors.white;
   static const greyColor = Colors.grey;
-  static const sideColor = Colors.deepPurpleAccent;
+  static const sideColor = Colors.blueAccent;
   static const sideColor2 = Colors.black;
   static const sideColor3 = Colors.pinkAccent;
 
