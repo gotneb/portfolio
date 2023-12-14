@@ -39,7 +39,7 @@ class _CardLanguageState extends State<CardLanguage> {
     TextStyle? style,
   }) =>
       Container(
-        padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
         decoration: const ShapeDecoration(
             shape: StadiumBorder(
           side: BorderSide(color: Style.sideColor),
@@ -50,7 +50,7 @@ class _CardLanguageState extends State<CardLanguage> {
   @override
   Widget build(BuildContext context) {
     Widget flag = CircleAvatar(
-      radius: 24,
+      radius: 32,
       foregroundImage: AssetImage(widget.language.flag),
     );
 
@@ -82,15 +82,19 @@ class _CardLanguageState extends State<CardLanguage> {
     final content = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const Gap(4),
+        flag,
+        const Gap(18),
+        Row(children: [
+          Text(widget.language.name, style: Style.langTitle),
+          const Gap(8),
+          _buildProficiencyText(widget.language.profiency,
+              style: Style.langNormal.copyWith(
+                fontSize: 12,
+                color: Style.sideColor,
+              )),
+        ]),
         const Gap(12),
-        Text(widget.language.name, style: Style.langTitle),
-        const Gap(6),
-        _buildProficiencyText(widget.language.profiency,
-            style: Style.langNormal.copyWith(
-              fontSize: 12,
-              color: Style.sideColor,
-            )),
-        const Gap(8),
         animText,
       ],
     );
@@ -101,8 +105,6 @@ class _CardLanguageState extends State<CardLanguage> {
         children: [
           coloredIndicator,
           const Gap(16),
-          flag,
-          const Gap(12),
           Flexible(child: content),
           const Gap(12),
         ]);

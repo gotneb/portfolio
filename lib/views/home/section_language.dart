@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/card_language.dart';
 import 'package:portfolio/models/me.dart';
-import 'package:portfolio/style.dart';
 
 class LanguageSection extends StatelessWidget {
   const LanguageSection({super.key});
 
   static const double photoRadius = 52;
-  static const double cardHeight = 120;
-  static const double cardWidth = 300;
+  static const double cardHeight = 180;
   static final boxBorderRadius = BorderRadius.circular(16);
 
   @override
@@ -20,7 +18,6 @@ class LanguageSection extends StatelessWidget {
 
     final box = Container(
         width: double.maxFinite,
-        // height: 4 * cardHeight,
         decoration: BoxDecoration(borderRadius: boxBorderRadius),
         child: Wrap(
           spacing: spacing,

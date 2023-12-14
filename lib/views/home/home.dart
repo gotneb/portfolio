@@ -56,7 +56,7 @@ class HomeView extends StatelessWidget {
         //const Gap(4),
         const Gap(24),
         _buildTitle(title: 'Languages', hiragana: '私の言語'),
-        const Gap(32),
+        const Gap(24),
         const LanguageSection(),
         const Gap(32),
         _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
