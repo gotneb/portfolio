@@ -18,13 +18,13 @@ class Me {
       name: 'Português',
       profiency: 'Native',
       flag: 'assets/images/country_flags/brazil.png',
-      greetings: ['Seja muito bem vindoo! :)', 'Oi! Tudo bemm? :)'],
+      greetings: ['Seja muito bem vindo! :)', 'Oi! Tudo bemm? *-*'],
     ),
     Language(
       name: 'English',
       profiency: 'Advanced',
       flag: 'assets/images/country_flags/english.png',
-      greetings: ['Be welcome! Pleasure is mine! *-*'],
+      greetings: ['Be welcome!', 'Pleasure is mine! xD'],
     ),
     Language(
       name: '日本語',

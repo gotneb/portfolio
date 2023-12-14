@@ -77,8 +77,9 @@ class Style {
 
   static final langNormal = GoogleFonts.notoSansJp(
     color: mainColor.withOpacity(0.85),
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 1,
   );
 
   // ********************************************************

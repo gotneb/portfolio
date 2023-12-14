@@ -50,8 +50,8 @@ class HomeView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        _buildTitle(title: 'Languages', hiragana: '私が話す言語'),
-        const Gap(4),
+        //_buildTitle(title: 'Languages', hiragana: '私が話す言語'),
+        //const Gap(4),
         const LanguageSection(),
         const Gap(32),
         _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
@@ -67,7 +67,7 @@ class HomeView extends StatelessWidget {
       child: ListView(
         children: [
           AboutSection(useFullScreen: useFullScreen),
-          const Gap(32),
+          const Gap(4),
           padedContent,
         ],
       ),
