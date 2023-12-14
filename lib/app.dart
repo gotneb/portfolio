@@ -1,4 +1,3 @@
-import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:gap/gap.dart';
@@ -13,47 +12,41 @@ class App extends StatelessWidget {
     final width = MediaQuery.sizeOf(context).width;
     final height = MediaQuery.sizeOf(context).height;
 
-    final background = Image.asset(
-      'assets/images/art.jpg',
-      width: width,
-      height: height,
-      fit: BoxFit.cover,
-    ).blurred(
-      blur: 15,
-      blurColor: Colors.black,
-    );
+    // final background = Image.asset(
+    //   'assets/images/art.jpg',
+    //   width: width,
+    //   height: height,
+    //   fit: BoxFit.cover,
+    // ).blurred(
+    //   blur: 15,
+    //   blurColor: Colors.black,
+    // );
 
     if (width < 1500) {
       return Stack(alignment: Alignment.bottomCenter, children: [
-        background,
         _buildCenter(width, height, useFullWidth: true),
       ]);
     }
 
-    // final content = Row(children: [
-    //   //_buildLeftPanel(width, height, title: 'FOLIO', hiragana: 'ポートフォリオ'),
-    //   _buildCenter(width, height),
-    //   //_buildRightPanel(width, height, title: 'ABOUT', hiragana: 'この人について'),
-    // ]);
-
+    final leftPanel = _buildLeftPanel(
+      width,
+      height,
+      title: 'FOLIO',
+      hiragana: 'ポートフォリオ',
+    );
+    final rightPanel = _buildRightPanel(
+      width,
+      height,
+      title: 'ABOUT',
+      hiragana: 'この人について',
+    );
     final content = _buildCenter(width, height);
 
-    return Stack(
-      children: [
-        background,
-        content,
-        Align(
-          alignment: Alignment.centerLeft,
-          child: _buildLeftPanel(width, height,
-              title: 'FOLIO', hiragana: 'ポートフォリオ'),
-        ),
-        Align(
-          alignment: Alignment.centerRight,
-          child: _buildRightPanel(width, height,
-              title: 'ABOUT', hiragana: 'この人について'),
-        ),
-      ],
-    );
+    return Stack(children: [
+      content,
+      Align(alignment: Alignment.centerLeft, child: leftPanel),
+      Align(alignment: Alignment.centerRight, child: rightPanel),
+    ]);
   }
 
   Widget _buildCenter(
@@ -61,19 +54,10 @@ class App extends StatelessWidget {
     double height, {
     bool useFullWidth = false,
   }) =>
-      Container(
-        padding: EdgeInsets.symmetric(horizontal: useFullWidth ? 12 : 0.1 * width),
+      SizedBox(
         width: width,
         height: height,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.4, 0.55],
-            colors: [Colors.transparent, Style.black2]
-          ),
-        ),
-        child: const HomeView(),
+        child: HomeView(useFullScreen: useFullWidth),
       );
 
   Widget _buildRightPanel(
@@ -130,6 +114,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Style.background,
       body: _buildBody(context),
     );
   }

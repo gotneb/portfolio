@@ -4,12 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 class Style {
   static const mainColor = Colors.white;
   static const greyColor = Colors.grey;
-  static const sideColor = Color(0xFF7067cf);
+  static const sideColor = Colors.deepPurpleAccent;
   static const sideColor2 = Colors.black;
   static const sideColor3 = Colors.pinkAccent;
 
   static const Color black = Color(0xFF232528);
   static const Color black2 = Color(0xFF100b00);
+
+  static const Color background = black2;
 
   static const textShadow = Shadow(
     color: Colors.black,

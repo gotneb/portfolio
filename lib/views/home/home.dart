@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/views/home/section_about.dart';
-import 'package:portfolio/views/home/section_buttons.dart';
 import 'package:portfolio/views/home/section_language.dart';
 import 'package:portfolio/views/home/section_projects.dart';
 
 import 'package:portfolio/style.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  const HomeView({
+    super.key,
+    required this.useFullScreen,
+  });
+
+  final bool useFullScreen;
 
   Widget _buildHiragana(
     String text, {
@@ -39,26 +43,32 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
+    final width = MediaQuery.sizeOf(context).width;
+
+    final padedContent = Padding(
+      padding: EdgeInsets.symmetric(horizontal: useFullScreen ? 12 : 0.1 * width),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+        _buildTitle(title: 'Languages', hiragana: '私が話す言語'),
+        const Gap(4),
+        const LanguageSection(),
+        const Gap(32),
+        _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
+        const Gap(32),
+        const ProjectsSection(),
+        const Gap(48),
+      ]),
+    );
 
     return ScrollConfiguration(
       // Hide annoying scrollbar
       behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
       child: ListView(
         children: [
-          Gap(0.38 * height),
-          const AboutSection(),
+          AboutSection(useFullScreen: useFullScreen),
           const Gap(32),
-          const ButtonsSection(),
-          const Gap(32),
-          _buildTitle(title: 'Languages', hiragana: '私が話す言語'),
-          const Gap(4),
-          const LanguageSection(),
-          const Gap(32),
-          _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
-          const Gap(32),
-          const ProjectsSection(),
-          const Gap(48),
+          padedContent,
         ],
       ),
     );

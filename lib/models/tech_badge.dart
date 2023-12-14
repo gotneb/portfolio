@@ -19,7 +19,7 @@ class TechBadge {
 
   static const golang = TechBadge(
     name: 'Golang',
-    logo: FontAwesome.golang,
+    logo: BoxIcons.bxl_go_lang,
   );
 
   static const csharp = TechBadge(
@@ -33,14 +33,19 @@ class TechBadge {
   );
   static const mongodb = TechBadge(
     name: 'MongoDB',
-    logo: FontAwesome.database,
+    logo: BoxIcons.bxl_mongodb,
   );
   static const flutter = TechBadge(
     name: 'Flutter',
-    logo: FontAwesome.weebly,
+    logo: BoxIcons.bxl_flutter,
   );
   static const cplusplus = TechBadge(
     name: 'C++',
-    logo: FontAwesome.c,
+    logo: BoxIcons.bxl_c_plus_plus,
+  );
+
+  static const server = TechBadge(
+    name: 'C++',
+    logo: BoxIcons.bx_server,
   );
 }

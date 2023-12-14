@@ -55,7 +55,10 @@ class LanguageSection extends StatelessWidget {
         width: 300,
         height: height,
         decoration: BoxDecoration(
-          color: Style.black2,
+          border: Border.all(
+            color: Style.greyColor,
+            width: 0.7,
+          ),
           borderRadius: boxBorderRadius,
         ),
         child: Row(
@@ -63,7 +66,7 @@ class LanguageSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               coloredIndicator,
-              const Gap(12),
+              const Gap(16),
               flag,
               const Gap(12),
               content,
@@ -107,7 +110,6 @@ class LanguageSection extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             width: double.maxFinite,
             decoration: BoxDecoration(
-              color: Style.black,
               borderRadius: boxBorderRadius,
             ),
             child: Wrap(
