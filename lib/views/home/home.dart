@@ -20,12 +20,14 @@ class HomeView extends StatelessWidget {
   }) =>
       Material(
         elevation: 16,
+        shadowColor: Style.sideColor,
         color: Colors.transparent,
+        borderRadius: BorderRadius.circular(26),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
           decoration: const ShapeDecoration(
             shape: StadiumBorder(),
-            color: Colors.white,
+            color: Style.sideColor,
           ),
           child: Text(text, style: style),
         ),

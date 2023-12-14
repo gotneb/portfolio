@@ -41,9 +41,10 @@ class Style {
   );
 
   static final normalJpTitleStyle = GoogleFonts.notoSansJp(
-    color: sideColor2,
+    color: Colors.white,
     fontSize: 20,
     fontWeight: FontWeight.bold,
+    letterSpacing: 1.2,
   );
 
   static final normalStyle = GoogleFonts.roboto(
