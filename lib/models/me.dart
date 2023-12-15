@@ -19,21 +19,21 @@ class Me {
       profiency: 'Native',
       flag: 'assets/images/country_flags/brazil.png',
       greetings: ['Seja muito bem vindo! :)', 'Oi! Tudo bemm? *-*'],
-      description: 'Apesar de português ser minha língua nativa, eu diariamente estou lendo, escutando em inglês. Diversas que aprendi e aprendo foi estudando através de couteúdo em inglês. Atualmente estou entusiasmo em japonês! s2',
+      description: 'Apesar do português ser minha língua nativa, eu diariamente estou lendo e escutando em inglês. Diversas coisas que aprendi foi estudando através de couteúdos em inglês. Atualmente estou entusiasmado aprendendo japonês! s2',
     ),
     Language(
       name: 'English',
       profiency: 'Advanced',
       flag: 'assets/images/country_flags/english.png',
       greetings: ['Be welcome!', 'Pleasure is mine! xD'],
-      description: "Altough portuguese is my mother tongue, I'm daily reading, listening in english. Most of the things I've learned (and I still learn) were trough my knowledge in english. Currently I'm pretty excited while learn japanese! s2",
+      description: "Altough portuguese is my mother tongue, I'm daily reading and listening in english. Most of the things I've learned were trough my knowledge in english. Currently I'm pretty excited while learning japanese! 💖",
     ),
     Language(
       name: '日本語',
       profiency: 'Beginner',
       flag: 'assets/images/country_flags/japan.png',
       greetings: ['初めてなら!', '元気ですか'],
-      description: '私の母国語はポルトガル語ですが、毎日英語を読んだり聞いたりしています。 私が学んだこと、そして今でも学んでいることのいくつかは、英語のコンテンツを通じて勉強することでした。 今は日本語に夢中です！ (づ｡◕‿‿◕｡)づ',
+      description: 'ポルトガル語は私の母国語ですが、私は毎日英語を読んだり聞いたりしています。 私が学んだことのいくつかは、英語のコンテンツを通じて勉強することでした。 私は今、日本語を学ぶことにとても興奮しています。\n(づ｡◕‿‿◕｡)づ',
     ),
   ];
 

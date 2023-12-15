@@ -86,6 +86,12 @@ class Style {
     letterSpacing: 1,
   );
 
+  static final langDescription = GoogleFonts.notoSansJp(
+    color: mainColor.withOpacity(0.7),
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+  );
+
   // ********************************************************
   // Projects
   // ********************************************************

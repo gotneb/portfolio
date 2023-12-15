@@ -79,22 +79,23 @@ class _CardLanguageState extends State<CardLanguage> {
       ),
     );
 
+    final proficiencyText = _buildProficiencyText(widget.language.profiency,
+        style: Style.langNormal.copyWith(
+          fontSize: 12,
+          color: Style.sideColor,
+        ));
+
     final content = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Gap(4),
-        flag,
-        const Gap(18),
+        const Gap(8),
         Row(children: [
           Text(widget.language.name, style: Style.langTitle),
-          const Gap(8),
-          _buildProficiencyText(widget.language.profiency,
-              style: Style.langNormal.copyWith(
-                fontSize: 12,
-                color: Style.sideColor,
-              )),
+          //const Gap(8),
+          const Spacer(),
+          proficiencyText,
         ]),
-        const Gap(12),
+        const Gap(4),
         animText,
       ],
     );
@@ -105,8 +106,18 @@ class _CardLanguageState extends State<CardLanguage> {
         children: [
           coloredIndicator,
           const Gap(16),
-          Flexible(child: content),
-          const Gap(12),
+          Flexible(
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              Row(mainAxisSize: MainAxisSize.min, children: [
+                flag,
+                const Gap(24),
+                Flexible(child: content),
+              ]),
+              const Gap(16),
+              Text(widget.language.description, style: Style.langDescription),
+            ]),
+          ),
+          const Gap(16),
         ]);
 
     final card = ConstrainedBox(

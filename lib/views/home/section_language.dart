@@ -6,7 +6,7 @@ class LanguageSection extends StatelessWidget {
   const LanguageSection({super.key});
 
   static const double photoRadius = 52;
-  static const double cardHeight = 180;
+  static const double cardHeight = 205;
   static final boxBorderRadius = BorderRadius.circular(16);
 
   @override
