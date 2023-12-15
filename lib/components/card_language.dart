@@ -121,7 +121,7 @@ class _CardLanguageState extends State<CardLanguage> {
         ]);
 
     final card = ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: 320),
+      constraints: const BoxConstraints(minWidth: 350),
       child: AnimatedContainer(
         duration: duration,
         curve: curve,
