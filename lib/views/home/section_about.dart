@@ -97,14 +97,21 @@ class AboutSection extends StatelessWidget {
           background,
           gradient(isLargeScreen: false),
           Padding(
-            padding: EdgeInsets.fromLTRB(12, 0.45 * height, 12, 0),
-            child: buildColumnData(showPhoto: true),
-          ),
+              padding: EdgeInsets.fromLTRB(12, 0.45 * height, 12, 0),
+              child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    buildColumnData(showPhoto: true),
+                    const Gap(8),
+                    const ButtonsSection(),
+                  ])),
         ],
       );
     }
 
-    final padding = EdgeInsets.symmetric(horizontal: 0.1 * width);
+    final double paddingWidth = width > 1500 ? 0.1 * width : 16; 
+    final padding = EdgeInsets.symmetric(horizontal: paddingWidth);
 
     return Stack(children: [
       background,

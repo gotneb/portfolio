@@ -47,7 +47,7 @@ class ButtonsSection extends StatelessWidget {
 
     return Wrap(
         spacing: 35,
-        runSpacing: 10,
+        runSpacing: 20,
         children: buttons.entries
             .map((e) => _buildButton(
                   text: e.key,
