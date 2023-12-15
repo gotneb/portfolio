@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/views/home/section_about.dart';
 import 'package:portfolio/views/home/section_language.dart';
 import 'package:portfolio/views/home/section_projects.dart';
@@ -47,13 +48,21 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
 
+    final footer = SizedBox(
+      width: width,
+      child: Center(
+          child: Icon(
+            BoxIcons.bxs_game,
+            size: 48,
+            shadows: const [Shadow(blurRadius: 4, color: Colors.black, offset: Offset(2, 2))],
+            color: Colors.white.withOpacity(0.5),
+          )),
+    );
+
     final padedContent = Padding(
-      padding: EdgeInsets.symmetric(horizontal: useFullScreen ? 12 : 0.1 * width),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-        //_buildTitle(title: 'Languages', hiragana: '私が話す言語'),
-        //const Gap(4),
+      padding:
+          EdgeInsets.symmetric(horizontal: useFullScreen ? 12 : 0.1 * width),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Gap(24),
         _buildTitle(title: 'Languages', hiragana: '私の言語'),
         const Gap(24),
@@ -62,7 +71,9 @@ class HomeView extends StatelessWidget {
         _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
         const Gap(32),
         const ProjectsSection(),
-        const Gap(48),
+        const Gap(105),
+        footer,
+        const Gap(60)
       ]),
     );
 
