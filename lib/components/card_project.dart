@@ -30,17 +30,13 @@ class _CardProjectState extends State<CardProject> {
                 margin: const EdgeInsets.only(right: 14),
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  borderRadius: iconBorderRadius,
-                  color: isMouseInside
-                      ? Colors.white
-                      : Style.black.withOpacity(0.8),
-                ),
+                    borderRadius: iconBorderRadius,
+                    color: isMouseInside ? Colors.white : null,
+                    gradient: isMouseInside ? null : _buildIconGradient()),
                 child: Center(
                     child: Icon(
                   e.logo,
-                  color: isMouseInside
-                      ? Style.black
-                      : Colors.white.withOpacity(0.7),
+                  color: isMouseInside ? Style.black : Colors.white,
                   size: 34,
                 ))),
           ))
@@ -51,6 +47,13 @@ class _CardProjectState extends State<CardProject> {
         end: Alignment.bottomRight,
         stops: [0.2, 0.8],
         colors: [Colors.deepPurpleAccent, Color(0xFF420adf)],
+      );
+
+  Gradient _buildIconGradient() => LinearGradient(
+        begin: Alignment.bottomLeft,
+        end: Alignment.topRight,
+        stops: const [0.1, 0.5],
+        colors: [Colors.blueAccent[700]!, Colors.blue],
       );
 
   @override
@@ -85,10 +88,12 @@ class _CardProjectState extends State<CardProject> {
       width: side,
       height: side,
       decoration: BoxDecoration(
-        color: isMouseInside ? null : Colors.black.withOpacity(0.4),
+        color: isMouseInside ? null : Style.blue2,
         borderRadius: BorderRadius.circular(18),
         border: Border.all(
-            color: isMouseInside ? Style.sideColor : Style.greyColor),
+            color: isMouseInside
+                ? Style.sideColor
+                : Colors.white.withOpacity(0.1)),
         gradient: isMouseInside ? _buildGradient() : null,
       ),
       child: content,
