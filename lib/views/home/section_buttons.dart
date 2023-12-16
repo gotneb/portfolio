@@ -14,6 +14,12 @@ class ButtonsSection extends StatelessWidget {
       'Contact me': BoxIcons.bx_chat,
     };
 
+    final urls = {
+      'View my linkedIn profile': 'https://www.linkedin.com/in/gabriel-bento-da-silva/',
+      'GitHub': 'https://github.com/gotneb',
+      'Contact me': '',
+    };
+
     return Wrap(
         spacing: 35,
         runSpacing: 20,
@@ -21,6 +27,7 @@ class ButtonsSection extends StatelessWidget {
             .map((e) => SocialButton(
                   content: e.key,
                   icon: e.value,
+                  link: urls[e.key]!,
                 ))
             .toList());
   }

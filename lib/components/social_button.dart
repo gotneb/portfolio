@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/style.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SocialButton extends StatefulWidget {
   const SocialButton({
     super.key,
     required this.content,
     required this.icon,
+    required this.link,
   });
 
   static final borderRadius = BorderRadius.circular(6);
 
   final String content;
   final IconData icon;
+  final String link;
 
   @override
   State<SocialButton> createState() => _SocialButtonState();
@@ -56,13 +60,20 @@ class _SocialButtonState extends State<SocialButton> {
         isMouseInside = false;
       }),
       cursor: SystemMouseCursors.click,
-      child: Material(
-        borderRadius: SocialButton.borderRadius,
-        color: isMouseInside ? Colors.white : Colors.transparent,
-        shadowColor: isMouseInside ? Style.sideColor : null,
-        elevation: 12,
-        child: button,
+      child: GestureDetector(
+        onTap: openLink,
+        child: Material(
+          borderRadius: SocialButton.borderRadius,
+          color: isMouseInside ? Colors.white : Colors.transparent,
+          shadowColor: isMouseInside ? Style.sideColor : null,
+          elevation: 12,
+          child: button,
+        ),
       ),
     );
+  }
+
+  Future<void> openLink() async {
+    await launchUrlString(widget.link);
   }
 }
