@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/models/me.dart';
@@ -51,7 +52,19 @@ class AboutSection extends StatelessWidget {
                     style: Style.titleStyle,
                   ),
                   const Gap(8),
-                  Text(Me.job, style: Style.subTitleStyle),
+                  DefaultTextStyle(
+                      style: Style.subTitleStyle,
+                      child: AnimatedTextKit(
+                        repeatForever: true,
+                        pause: const Duration(seconds: 6),
+                        animatedTexts: [
+                          TypewriterAnimatedText(
+                            Me.job,
+                            curve: Curves.ease,
+                            speed: const Duration(milliseconds: 300),
+                          ),
+                        ],
+                      )),
                   const Gap(8),
                   Flexible(child: Text(Me.about, style: Style.normalStyle)),
                 ])));
@@ -110,7 +123,7 @@ class AboutSection extends StatelessWidget {
       );
     }
 
-    final double paddingWidth = width > 1500 ? 0.1 * width : 16; 
+    final double paddingWidth = width > 1500 ? 0.1 * width : 16;
     final padding = EdgeInsets.symmetric(horizontal: paddingWidth);
 
     return Stack(children: [

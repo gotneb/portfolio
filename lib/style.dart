@@ -18,20 +18,20 @@ class Style {
 
   static const textShadow = Shadow(
     color: Colors.black,
-    blurRadius: 4,
-    offset: Offset(2, 2),
+    blurRadius: 2,
+    offset: Offset(2.2, 2.2),
   );
 
   static final titleStyle = GoogleFonts.roboto(
     color: mainColor,
-    fontSize: 42,
+    fontSize: 44,
     fontWeight: FontWeight.bold,
     shadows: [textShadow],
   );
 
   static final subTitleStyle = GoogleFonts.roboto(
     color: sideColor,
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: FontWeight.bold,
     shadows: [textShadow],
   );
