@@ -28,7 +28,7 @@ class _CardProjectState extends State<CardProject> {
             borderRadius: iconBorderRadius,
             child: Container(
                 margin: const EdgeInsets.only(right: 14),
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                     borderRadius: iconBorderRadius,
                     color: isMouseInside ? Colors.white : null,
@@ -61,9 +61,10 @@ class _CardProjectState extends State<CardProject> {
     final width = MediaQuery.sizeOf(context).width;
     final height = MediaQuery.sizeOf(context).height;
 
-    final side = widget.isTallerScreen ? height / 3.5 : width / 2.2;
+    final side = widget.isTallerScreen ? height / 3.1 : width / 2.2;
 
     final content = Column(
+      mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(widget.project.title, style: Style.titleProject),
@@ -72,13 +73,14 @@ class _CardProjectState extends State<CardProject> {
             child: Text(
           widget.project.description,
           softWrap: true,
-          overflow: TextOverflow.fade,
+          overflow: TextOverflow.ellipsis,
+          maxLines: 13,
           style: isMouseInside
               ? Style.descriptionProject
                   .copyWith(color: Style.mainColor.withOpacity(0.8))
               : Style.descriptionProject,
         )),
-        const Gap(24),
+        const Gap(20),
         Row(children: _buildBadges()),
       ],
     );
@@ -86,13 +88,13 @@ class _CardProjectState extends State<CardProject> {
     final box = Container(
       padding: const EdgeInsets.all(22),
       width: side,
-      height: side,
+      height: 400,
       decoration: BoxDecoration(
         color: isMouseInside ? null : Style.blue2,
         borderRadius: BorderRadius.circular(18),
         border: Border.all(
             color: isMouseInside
-                ? Style.sideColor
+                ? Colors.deepPurpleAccent
                 : Colors.white.withOpacity(0.1)),
         gradient: isMouseInside ? _buildGradient() : null,
       ),
@@ -112,7 +114,7 @@ class _CardProjectState extends State<CardProject> {
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(18),
           child: ConstrainedBox(
-            constraints: const BoxConstraints(minHeight: 300),
+            constraints: const BoxConstraints(minHeight: 350, minWidth: 350),
             child: box,
           )),
     );
