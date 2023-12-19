@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -22,8 +23,8 @@ class TechBadge {
     logo: BoxIcons.bxl_go_lang,
   );
 
-  static const csharp = TechBadge(
-    name: 'C#',
+  static const c = TechBadge(
+    name: 'C',
     logo: FontAwesome.c,
   );
 
@@ -45,7 +46,37 @@ class TechBadge {
   );
 
   static const server = TechBadge(
-    name: 'C++',
+    name: 'Server',
     logo: BoxIcons.bx_server,
+  );
+
+  static const desktop = TechBadge(
+    name: 'Desktop',
+    logo: BoxIcons.bx_desktop,
+  );
+
+  static const windows = TechBadge(
+    name: 'Windows',
+    logo: BoxIcons.bxl_windows,
+  );
+
+  static const typescript = TechBadge(
+    name: 'Typescript',
+    logo: BoxIcons.bxl_typescript,
+  );
+
+  static const tag = TechBadge(
+    name: 'tag',
+    logo: Icons.tag,
+  );
+
+  static const godot = TechBadge(
+    name: 'Godot',
+    logo: Icons.sports_esports,
+  );
+
+  static const git = TechBadge(
+    name: 'Git',
+    logo: BoxIcons.bxl_git,
   );
 }
