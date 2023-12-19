@@ -55,16 +55,15 @@ class AboutSection extends StatelessWidget {
                   DefaultTextStyle(
                       style: Style.subTitleStyle,
                       child: AnimatedTextKit(
-                        repeatForever: true,
-                        pause: const Duration(seconds: 6),
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            Me.job,
-                            curve: Curves.ease,
-                            speed: const Duration(milliseconds: 300),
-                          ),
-                        ],
-                      )),
+                          repeatForever: true,
+                          pause: const Duration(seconds: 6),
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                              Me.job,
+                              curve: Curves.ease,
+                              speed: const Duration(milliseconds: 300),
+                            ),
+                          ])),
                   const Gap(8),
                   Flexible(child: Text(Me.about, style: Style.normalStyle)),
                 ])));

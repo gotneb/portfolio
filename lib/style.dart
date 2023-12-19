@@ -97,7 +97,7 @@ class Style {
   // ********************************************************
   static final titleProject = GoogleFonts.roboto(
     color: mainColor,
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: FontWeight.bold,
   );
 
