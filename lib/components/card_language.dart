@@ -145,7 +145,7 @@ class _CardLanguageState extends State<CardLanguage> {
           onEnter: onEnter,
           onExit: onExit,
           child: Transform.translate(
-            offset: Offset(0, isMouseInside ? -8 : 0),
+            offset: Offset(0, isMouseInside ? -16 : 0),
             child: card,
           )),
     );

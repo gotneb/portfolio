@@ -28,7 +28,7 @@ class AboutSection extends StatelessWidget {
       child: ClipRRect(
         borderRadius: borderRadius,
         child: Image.asset(
-          'assets/images/my_photo.jpg',
+          'assets/images/me_again.jpg',
           width: 300,
           height: 300,
         ),
