@@ -106,4 +106,21 @@ class Style {
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
+
+  // ********************************************************
+  // Quote
+  // ********************************************************
+  static final quoteText = GoogleFonts.notoSansJp(
+    fontSize: 55,
+    fontWeight: FontWeight.w300,
+  );
+
+  static final quoteAuthor = GoogleFonts.notoSansJp(
+    fontSize: 22,
+    letterSpacing: 1,
+  );
+
+  static final quoteRef = GoogleFonts.notoSansJp(
+    fontSize: 16,
+  );
 }

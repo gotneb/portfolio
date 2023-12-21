@@ -6,6 +6,7 @@ import 'package:portfolio/views/home/section_language.dart';
 import 'package:portfolio/views/home/section_projects.dart';
 
 import 'package:portfolio/style.dart';
+import 'package:portfolio/views/home/section_quote.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -71,6 +72,8 @@ class HomeView extends StatelessWidget {
         _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
         const Gap(32),
         const ProjectsSection(),
+        const Gap(32),
+        const QuoteSection(),
         const Gap(105),
         footer,
         const Gap(60)
