@@ -110,9 +110,9 @@ class Style {
   // ********************************************************
   // Quote
   // ********************************************************
-  static final quoteText = GoogleFonts.notoSansJp(
-    fontSize: 55,
-    fontWeight: FontWeight.w300,
+  static final quoteText = GoogleFonts.playfairDisplay(
+    fontSize: 52,
+    fontWeight: FontWeight.w400,
   );
 
   static final quoteAuthor = GoogleFonts.notoSansJp(
@@ -122,5 +122,6 @@ class Style {
 
   static final quoteRef = GoogleFonts.notoSansJp(
     fontSize: 16,
+    fontWeight: FontWeight.w200,
   );
 }

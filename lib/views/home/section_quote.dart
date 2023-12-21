@@ -6,7 +6,7 @@ class QuoteSection extends StatelessWidget {
   const QuoteSection({super.key});
 
   static const quote =
-      'The rough stone is inside you.\nYou have to find it and then polish it.\nIt takes time and effort.';
+      'The rough stone is inside you.\nYou have to find it and then polish it.\nIt takes time and effort."';
   static const author = 'Shirou Nishi (西 司朗)';
   static const description = 'Quote from Whisper of Heart';
   static const authorPhoto =
@@ -41,21 +41,23 @@ class QuoteSection extends StatelessWidget {
       ),
     );
 
+    final quoteMark = Transform.flip(
+      flipX: true,
+      child: const Icon(Icons.format_quote, color: Colors.black, size: 90),
+    );
+
     final content = Column(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        quoteMark,
         Text(quote, style: Style.quoteText),
         const Spacer(),
         divider,
         const Gap(16),
         Text(author, style: Style.quoteAuthor),
         const Gap(8),
-        Row(children: [
-          Text(description, style: Style.quoteRef),
-          const Gap(8),
-          const Icon(Icons.north_east, color: Colors.black),
-        ]),
+        Text(description, style: Style.quoteRef),
       ],
     );
 
@@ -75,9 +77,9 @@ class QuoteSection extends StatelessWidget {
 
     return Container(
       width: width,
-      height: 0.8 * MediaQuery.sizeOf(context).height,
+      height: 0.82 * MediaQuery.sizeOf(context).height,
       margin: EdgeInsets.only(right: xAxis, top: yAxis),
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.fromLTRB(48, 32, 32, 32),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
