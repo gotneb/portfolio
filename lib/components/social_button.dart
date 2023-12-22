@@ -10,6 +10,8 @@ class SocialButton extends StatefulWidget {
     required this.content,
     required this.icon,
     required this.link,
+    this.color = Colors.white,
+    this.backgroundColor = Style.sideColor,
   });
 
   static final borderRadius = BorderRadius.circular(6);
@@ -17,6 +19,8 @@ class SocialButton extends StatefulWidget {
   final String content;
   final IconData icon;
   final String link;
+  final Color color;
+  final Color backgroundColor;
 
   @override
   State<SocialButton> createState() => _SocialButtonState();
@@ -30,17 +34,21 @@ class _SocialButtonState extends State<SocialButton> {
   @override
   Widget build(BuildContext context) {
     final content = [
-      FaIcon(widget.icon, color: Colors.white, size: 44),
+      FaIcon(widget.icon, color: widget.color, size: 44),
       const Gap(16),
-      Container(width: 1, height: 44, color: Colors.white),
+      Container(width: 1, height: 44, color: widget.color),
       const Gap(16),
-      Text(widget.content, style: Style.normalStyle),
+      Text(widget.content,
+          style: Style.normalStyle.copyWith(
+            color: widget.color,
+            fontWeight: FontWeight.bold,
+          )),
     ];
 
     final button = Container(
       padding: padding,
       decoration: BoxDecoration(
-          color: Style.sideColor,
+          color: widget.backgroundColor,
           borderRadius: SocialButton.borderRadius,
           border: Border.all(
             color: isMouseInside ? Colors.blue[900]! : Colors.transparent,
@@ -63,8 +71,8 @@ class _SocialButtonState extends State<SocialButton> {
         onTap: openLink,
         child: Material(
           borderRadius: SocialButton.borderRadius,
-          color: isMouseInside ? Colors.white : Colors.transparent,
-          shadowColor: isMouseInside ? Style.sideColor : null,
+          color: isMouseInside ? widget.color : Colors.transparent,
+          shadowColor: isMouseInside ? widget.backgroundColor : null,
           elevation: 12,
           child: button,
         ),
