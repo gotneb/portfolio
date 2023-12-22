@@ -102,15 +102,15 @@ class Style {
   // ********************************************************
   // Projects
   // ********************************************************
-  static final titleProject = GoogleFonts.roboto(
+  static final titleProject = GoogleFonts.poppins(
     color: mainColor,
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
 
-  static final descriptionProject = GoogleFonts.roboto(
+  static final descriptionProject = GoogleFonts.lato(
     color: greyColor,
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: FontWeight.w400,
   );
 

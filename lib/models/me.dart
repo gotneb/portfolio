@@ -5,7 +5,7 @@ import 'tech_badge.dart';
 class Me {
   static const name = 'Gabriel Bento da Silva';
   static const about = "Hey there! I'm a developer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. My hobby is creating histories シ (that's so relaxing).\n\nOne of the things I mostly like to do is make something unique, doesn't matter what it's. It can be a site, a project or whatever. Make something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
-  static const job = 'Flutter Developer';
+  static const job = 'Flutter {Developer}';
   
   static const email = 'gabrielorigenstdb@gmail.com';
   static const subject = 'Job Opportunity';

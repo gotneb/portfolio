@@ -36,7 +36,7 @@ class AboutSection extends StatelessWidget {
     );
 
     buildColumnData({bool showPhoto = false}) => SizedBox(
-        height: showPhoto ? 750 : 300,
+        height: showPhoto ? 780 : 300,
         child: Padding(
             padding: const EdgeInsets.only(right: 80.0),
             child: Column(
