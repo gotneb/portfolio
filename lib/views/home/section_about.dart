@@ -64,8 +64,8 @@ class AboutSection extends StatelessWidget {
                               speed: const Duration(milliseconds: 300),
                             ),
                           ])),
-                  const Gap(8),
-                  Flexible(child: Text(Me.about, style: Style.normalStyle)),
+                  const Gap(10),
+                  Flexible(child: Text(Me.about, style: Style.homeDescription)),
                 ])));
 
     final background = Image.asset(

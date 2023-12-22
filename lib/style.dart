@@ -70,6 +70,13 @@ class Style {
     letterSpacing: 1.5,
   );
 
+  static final homeDescription = GoogleFonts.openSans(
+    color: mainColor,
+    fontSize: 17,
+    fontWeight: FontWeight.w300,
+    shadows: [textShadow],
+  );
+
   // ********************************************************
   // Languages
   // ********************************************************
