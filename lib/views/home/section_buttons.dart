@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/components/social_button.dart';
+import 'package:portfolio/models/me.dart';
 import 'package:portfolio/style.dart';
 
 class ButtonsSection extends StatelessWidget {
@@ -25,7 +26,7 @@ class ButtonsSection extends StatelessWidget {
       SocialButton(
         content: 'Contact me',
         icon: BoxIcons.bx_chat,
-        link: '',
+        link: 'mailto:${Me.email}?subject=${Me.subject}&body=${Me.body}',
       ),
     ];
 

@@ -4,15 +4,12 @@ import 'tech_badge.dart';
 
 class Me {
   static const name = 'Gabriel Bento da Silva';
-
-  static const lorem =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius ex elit, in sagittis mauris efficitur non. Morbi tempor imperdiet libero sit amet tristique. Praesent et purus ut orci mollis pellentesque. Suspendisse malesuada dignissim quam, quis dignissim lorem porta sit amet. Donec at leo ac libero tristique interdum nec ac libero. Donec iaculis sollicitudin ipsum. Donec condimentum turpis quis pulvinar blandit. Donec facilisis consectetur lacus eu facilisis. Morbi gravida scelerisque lorem id euismod. Quisque finibus, lectus at varius elementum, dui nisi hendrerit elit, vitae semper enim dui et mauris. Proin mollis magna neque, malesuada accumsan leo iaculis eget. In ut dolor quis nunc dapibus tristique vel at est. ';
-
-  static const about = "Hey there! I'm a developer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. My hobby is creating histories シ (I find it so relaxing).\n\nOne of the things I mostly like to do is make something unique, doesn't matter what it's. It can be a site, a project or whatever. Make something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
-
+  static const about = "Hey there! I'm a developer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. My hobby is creating histories シ (that's so relaxing).\n\nOne of the things I mostly like to do is make something unique, doesn't matter what it's. It can be a site, a project or whatever. Make something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
   static const job = 'Flutter Developer';
-
-  static const techStack = ['Flutter', 'Rust', 'Python', 'C++', 'C', 'Go'];
+  
+  static const email = 'gabrielorigenstdb@gmail.com';
+  static const subject = 'Job Opportunity';
+  static const body = 'Hello! Feel free to get in touch to discuss opportunities.';
 
   static const languages = [
     Language(
