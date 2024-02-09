@@ -80,16 +80,12 @@ class HomeView extends StatelessWidget {
       ]),
     );
 
-    return ScrollConfiguration(
-      // Hide annoying scrollbar
-      behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-      child: ListView(
-        children: [
-          AboutSection(useFullScreen: useFullScreen),
-          const Gap(4),
-          padedContent,
-        ],
-      ),
+    return ListView(
+      children: [
+        AboutSection(useFullScreen: useFullScreen),
+        const Gap(4),
+        padedContent,
+      ],
     );
   }
 }

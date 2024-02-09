@@ -73,7 +73,7 @@ class Style {
   static final homeDescription = GoogleFonts.openSans(
     color: mainColor,
     fontSize: 16,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w400,
     shadows: [textShadow],
   );
 
@@ -95,7 +95,7 @@ class Style {
 
   static final langDescription = GoogleFonts.notoSansJp(
     color: mainColor.withOpacity(0.7),
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: FontWeight.w400,
   );
 
