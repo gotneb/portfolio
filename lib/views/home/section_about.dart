@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -16,6 +18,12 @@ class AboutSection extends StatelessWidget {
 
   static final borderRadius = BorderRadius.circular(20);
 
+  static final _backgrounds = [
+    // 'assets/images/bg_0.jpg',
+    // 'assets/images/bg_1.jpg',
+    'assets/images/bg_2.gif',
+  ];
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
@@ -28,7 +36,7 @@ class AboutSection extends StatelessWidget {
       child: ClipRRect(
         borderRadius: borderRadius,
         child: Image.asset(
-          'assets/images/me_2.jpeg',
+          'assets/images/me_05.jpg',
           width: 300,
           height: 300,
         ),
@@ -69,7 +77,7 @@ class AboutSection extends StatelessWidget {
                 ])));
 
     final background = Image.asset(
-      'assets/images/horizon.jpg',
+      _getBackground(),
       width: width,
       height: 0.7 * height,
       fit: BoxFit.cover,
@@ -137,4 +145,7 @@ class AboutSection extends StatelessWidget {
       ),
     ]);
   }
+
+  String _getBackground() =>
+      _backgrounds[Random().nextInt(_backgrounds.length)];
 }

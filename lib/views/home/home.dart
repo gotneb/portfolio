@@ -53,11 +53,13 @@ class HomeView extends StatelessWidget {
       width: width,
       child: Center(
           child: Icon(
-            BoxIcons.bxs_game,
-            size: 48,
-            shadows: const [Shadow(blurRadius: 4, color: Colors.black, offset: Offset(2, 2))],
-            color: Colors.white.withOpacity(0.5),
-          )),
+        BoxIcons.bxs_game,
+        size: 48,
+        shadows: const [
+          Shadow(blurRadius: 4, color: Colors.black, offset: Offset(2, 2))
+        ],
+        color: Colors.white.withOpacity(0.5),
+      )),
     );
 
     final padedContent = Padding(
@@ -74,7 +76,15 @@ class HomeView extends StatelessWidget {
         const ProjectsSection(),
         const Gap(32),
         const QuoteSection(),
-        const Gap(105),
+        const Gap(94),
+        Center(
+          child: Text(
+            'The design of this site is heavily inspired from https://daginatsuko.com\nPlease take a look at Daginatsuko\' site, he has a great passion for his work too.',
+            textAlign: TextAlign.center,
+            style: Style.descriptionProject,
+          ),
+        ),
+        const Gap(50),
         footer,
         const Gap(60)
       ]),
