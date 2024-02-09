@@ -85,20 +85,23 @@ class _CardProjectState extends State<CardProject> {
       ],
     );
 
-    final box = Container(
-      padding: const EdgeInsets.all(22),
-      width: side,
-      height: 400,
-      decoration: BoxDecoration(
-        color: isMouseInside ? null : Style.blue2,
-        borderRadius: BorderRadius.circular(18),
-        border: Border.all(
-            color: isMouseInside
-                ? Colors.deepPurpleAccent
-                : Colors.white.withOpacity(0.1)),
-        gradient: isMouseInside ? _buildGradient() : null,
+    final box = GestureDetector(
+      onTap: () => _showWarningDialog(),
+      child: Container(
+        padding: const EdgeInsets.all(22),
+        width: side,
+        height: 400,
+        decoration: BoxDecoration(
+          color: isMouseInside ? null : Style.blue2,
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(
+              color: isMouseInside
+                  ? Colors.deepPurpleAccent
+                  : Colors.white.withOpacity(0.1)),
+          gradient: isMouseInside ? _buildGradient() : null,
+        ),
+        child: content,
       ),
-      child: content,
     );
 
     return MouseRegion(
@@ -117,6 +120,40 @@ class _CardProjectState extends State<CardProject> {
             constraints: const BoxConstraints(minHeight: 350, minWidth: 350),
             child: box,
           )),
+    );
+  }
+
+  Future<void> _showWarningDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+            backgroundColor: Style.blue2,
+            title: Text(
+              '⚠️ The design of this page isn\'t done yet... ⚠️',
+              style: Style.normalJpTitleStyle,
+            ),
+            content: ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.network(
+                'https://64.media.tumblr.com/a30241de82d4801b10194674ccf46349/4dcdba1494f76bfa-02/s540x810/67dc7e8df94c9b0b50b46b79d3cfdb3494ffce05.gif',
+                width: 540,
+                height: 290,
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: const Text('Gotcha',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5,
+                    )),
+                onPressed: () => Navigator.of(context).pop(),
+              )
+            ]);
+      },
     );
   }
 }
