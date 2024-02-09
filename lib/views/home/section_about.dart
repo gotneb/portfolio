@@ -57,13 +57,13 @@ class AboutSection extends StatelessWidget {
                       child: AnimatedTextKit(
                           repeatForever: true,
                           pause: const Duration(seconds: 6),
-                          animatedTexts: [
-                            TypewriterAnimatedText(
-                              Me.job,
-                              curve: Curves.ease,
-                              speed: const Duration(milliseconds: 300),
-                            ),
-                          ])),
+                          animatedTexts: Me.job
+                              .map((expertise) => TypewriterAnimatedText(
+                                    expertise,
+                                    curve: Curves.ease,
+                                    speed: const Duration(milliseconds: 260),
+                                  ))
+                              .toList())),
                   const Gap(10),
                   Flexible(child: Text(Me.about, style: Style.homeDescription)),
                 ])));
