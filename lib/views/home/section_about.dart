@@ -19,8 +19,8 @@ class AboutSection extends StatelessWidget {
   static final borderRadius = BorderRadius.circular(20);
 
   static final _backgrounds = [
-    // 'assets/images/bg_0.jpg',
-    // 'assets/images/bg_1.jpg',
+    'assets/images/bg_0.jpg',
+    'assets/images/bg_1.jpg',
     'assets/images/bg_2.gif',
   ];
 

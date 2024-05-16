@@ -8,9 +8,8 @@ class QuoteSection extends StatelessWidget {
   static const quote =
       'The rough stone is inside you.\nYou have to find it and then polish it.\nIt takes time and effort."';
   static const author = 'Shirou Nishi (西 司朗)';
-  static const description = 'Quote from Whisper of Heart';
-  static const authorPhoto =
-      'https://64.media.tumblr.com/a6c16595bad89d5d075c73467492c942/a60e5a2731dab8e7-64/s540x810/7343ee1ee6490eb3c43a799d4f0a13905b4060a5.gif';
+  static const description = 'Quote from Whisper of Heart (1995)';
+  static const authorPhoto = 'assets/images/nishi.png';
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class QuoteSection extends StatelessWidget {
         : width > 750.0
             ? 130.0
             : 88.0;
-    final outerRadius = radius + (width > 750.0 ? 16 : 8);
+    final outerRadius = radius + (width > 750.0 ? 12 : 8);
 
     final quoteAuthorPhoto = Material(
       borderRadius: BorderRadius.circular(outerRadius),
@@ -36,7 +35,7 @@ class QuoteSection extends StatelessWidget {
         backgroundColor: Colors.white,
         child: CircleAvatar(
           radius: radius,
-          foregroundImage: const NetworkImage(authorPhoto),
+          foregroundImage: const AssetImage(authorPhoto),
         ),
       ),
     );
