@@ -50,13 +50,13 @@ class QuoteSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         quoteMark,
-        Text(quote, style: Style.quoteText),
+        SelectableText(quote, style: Style.quoteText),
         const Spacer(),
         divider,
         const Gap(16),
-        Text(author, style: Style.quoteAuthor),
+        SelectableText(author, style: Style.quoteAuthor),
         const Gap(8),
-        Text(description, style: Style.quoteRef),
+        SelectableText(description, style: Style.quoteRef),
       ],
     );
 

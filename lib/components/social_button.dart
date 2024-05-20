@@ -10,14 +10,16 @@ class SocialButton extends StatefulWidget {
     required this.content,
     required this.icon,
     required this.link,
+    this.width,
     this.color = Colors.white,
     this.backgroundColor = Style.sideColor,
   });
 
-  static final borderRadius = BorderRadius.circular(6);
+  static final borderRadius = BorderRadius.circular(16);
 
   final String content;
   final IconData icon;
+  final double? width;
   final String link;
   final Color color;
   final Color backgroundColor;
@@ -47,6 +49,7 @@ class _SocialButtonState extends State<SocialButton> {
 
     final button = Container(
       padding: padding,
+      width: widget.width,
       decoration: BoxDecoration(
           color: widget.backgroundColor,
           borderRadius: SocialButton.borderRadius,

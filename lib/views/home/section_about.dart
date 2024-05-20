@@ -21,8 +21,6 @@ class AboutSection extends StatelessWidget {
   static final _backgrounds = [
     'assets/images/bg_1.jpg',
     'assets/images/bg_2.jpg',
-    'assets/images/bg_3.png',
-    'assets/images/bg_4.png',
   ];
 
   @override

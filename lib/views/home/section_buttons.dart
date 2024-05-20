@@ -12,9 +12,10 @@ class ButtonsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     const buttons = [
       SocialButton(
-        content: 'View my linkedIn profile',
+        content: 'My linkedIn profile',
         icon: FontAwesomeIcons.linkedin,
         link: 'https://www.linkedin.com/in/gabriel-bento-da-silva/',
+        width: 300,
         color: Style.sideColor,
         backgroundColor: Colors.white,
       ),

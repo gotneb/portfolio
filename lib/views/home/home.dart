@@ -78,7 +78,7 @@ class HomeView extends StatelessWidget {
         const QuoteSection(),
         const Gap(94),
         Center(
-          child: Text(
+          child: SelectableText(
             'The design of this site is heavily inspired from https://daginatsuko.com\nPlease take a look at Daginatsuko\' site, he has a great passion for his work too.',
             textAlign: TextAlign.center,
             style: Style.descriptionProject,
