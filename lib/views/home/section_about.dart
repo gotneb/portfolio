@@ -19,9 +19,10 @@ class AboutSection extends StatelessWidget {
   static final borderRadius = BorderRadius.circular(20);
 
   static final _backgrounds = [
-    'assets/images/bg_0.jpg',
     'assets/images/bg_1.jpg',
-    'assets/images/bg_2.gif',
+    'assets/images/bg_2.jpg',
+    'assets/images/bg_3.png',
+    'assets/images/bg_4.png',
   ];
 
   @override
@@ -36,7 +37,7 @@ class AboutSection extends StatelessWidget {
       child: ClipRRect(
         borderRadius: borderRadius,
         child: Image.asset(
-          'assets/images/me_05.jpg',
+          'assets/images/deedlit.png',
           width: 300,
           height: 300,
         ),
@@ -146,6 +147,5 @@ class AboutSection extends StatelessWidget {
     ]);
   }
 
-  String _getBackground() =>
-      _backgrounds[Random().nextInt(_backgrounds.length)];
+  String _getBackground() => _backgrounds[Random().nextInt(_backgrounds.length)];
 }

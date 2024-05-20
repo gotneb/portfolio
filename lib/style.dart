@@ -22,21 +22,21 @@ class Style {
     offset: Offset(2.2, 2.2),
   );
 
-  static final titleStyle = GoogleFonts.roboto(
+  static final titleStyle = GoogleFonts.poppins(
     color: mainColor,
     fontSize: 44,
     fontWeight: FontWeight.bold,
     shadows: [textShadow],
   );
 
-  static final subTitleStyle = GoogleFonts.roboto(
+  static final subTitleStyle = GoogleFonts.poppins(
     color: sideColor,
     fontSize: 28,
     fontWeight: FontWeight.bold,
     shadows: [textShadow],
   );
 
-  static final normalTitleStyle = GoogleFonts.roboto(
+  static final normalTitleStyle = GoogleFonts.poppins(
     color: mainColor,
     fontSize: 24,
     fontWeight: FontWeight.bold,
@@ -50,7 +50,7 @@ class Style {
     letterSpacing: 1.2,
   );
 
-  static final normalStyle = GoogleFonts.roboto(
+  static final normalStyle = GoogleFonts.poppins(
     color: mainColor,
     fontSize: 18,
     fontWeight: FontWeight.w300,
@@ -70,10 +70,10 @@ class Style {
     letterSpacing: 1.5,
   );
 
-  static final homeDescription = GoogleFonts.openSans(
+  static final homeDescription = GoogleFonts.poppins(
     color: mainColor,
     fontSize: 16,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w200,
     shadows: [textShadow],
   );
 

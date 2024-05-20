@@ -4,8 +4,8 @@ import 'tech_badge.dart';
 
 class Me {
   static const name = 'Gabriel Bento da Silva';
-  static const about = "Wassup! I'm a developer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. My hobby is creating histories シ and playing games.\n\nI enjoy problem-solving as well as exposing my creativty trough my projects. I like making things by myself from scratch, and also putting effort into making them \"unique\". For me, make something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
-  static const job = ['Flutter Developer', 'C++ Developer', 'Rust enjoyer', 'Python hobbyst'];
+  static const about = "Wassup! I'm a developer and freelancer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. One of my hobbies are creating histories and playing games.\n\nI enjoy problem-solving as well as exposing my creativty through my projects. I enjoy making things by myself from scratch, and also putting effort into making them unique. For me, making something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
+  static const job = ['Flutter Developer', 'C++ Developer', 'Rust enthusiast', 'Python developer'];
   
   static const email = 'gabrielorigenstdb@gmail.com';
   static const subject = 'Job Opportunity';
@@ -16,7 +16,7 @@ class Me {
       name: 'Português',
       profiency: 'Native',
       flag: 'assets/images/country_flags/brazil.png',
-      greetings: ['Seja muito bem vindo! :)', 'Oi! Tudo bemm? *-*'],
+      greetings: ['Seja muito bem vindo! xD', 'Feliz que esteja aqui! >.<'],
       description:
           'Apesar do português ser minha língua nativa, eu diariamente estou lendo e escutando em inglês. Diversas coisas que aprendi foi estudando através de couteúdos em inglês. Atualmente estou entusiasmado aprendendo japonês! s2',
     ),
@@ -32,7 +32,7 @@ class Me {
       name: '日本語',
       profiency: 'Beginner',
       flag: 'assets/images/country_flags/japan.png',
-      greetings: ['初めてなら!', '元気ですか'],
+      greetings: ['初めてなら!', 'お元気ですか'],
       description:
           'ポルトガル語は私の母国語ですが、私は毎日英語を読んだり聞いたりしています。 私が学んだことのいくつかは、英語のコンテンツを通じて勉強することでした。 私は今、日本語を学ぶことにとても興奮しています。(づ｡◕‿‿◕｡)づ',
     ),
