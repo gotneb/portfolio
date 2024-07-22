@@ -19,9 +19,11 @@ class AboutSection extends StatelessWidget {
   static final borderRadius = BorderRadius.circular(20);
 
   static final _backgrounds = [
+    'assets/images/bg_0.jpg',
     'assets/images/bg_1.jpg',
-    'assets/images/bg_2.jpg',
   ];
+
+  static const _pfp = 'assets/images/seiji_amasawa.jpg';
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class AboutSection extends StatelessWidget {
       child: ClipRRect(
         borderRadius: borderRadius,
         child: Image.asset(
-          'assets/images/deedlit.png',
+          _pfp,
           width: 300,
           height: 300,
         ),

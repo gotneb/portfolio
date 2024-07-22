@@ -5,7 +5,7 @@ import 'tech_badge.dart';
 class Me {
   static const name = 'Gabriel Bento da Silva';
   static const about = "Wassup! I'm a developer and freelancer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. One of my hobbies are creating histories and playing games.\n\nI enjoy problem-solving as well as exposing my creativty through my projects. I enjoy making things by myself from scratch, and also putting effort into making them unique. For me, making something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
-  static const job = ['Flutter Developer', 'C++ Developer', 'Rust enthusiast', 'Python developer'];
+  static const job = ['Android Developer', 'C++ Developer', 'Flutter Developer', 'Rust enthusiast', 'Python developer'];
   
   static const email = 'gabrielorigenstdb@gmail.com';
   static const subject = 'Job Opportunity';
@@ -14,7 +14,7 @@ class Me {
   static const languages = [
     Language(
       name: 'Português',
-      profiency: 'Native',
+      profiency: 'Fluent',
       flag: 'assets/images/country_flags/brazil.png',
       greetings: ['Seja muito bem vindo! xD', 'Feliz que esteja aqui! >.<'],
       description:
@@ -22,7 +22,7 @@ class Me {
     ),
     Language(
       name: 'English',
-      profiency: 'Advanced',
+      profiency: 'Fluent',
       flag: 'assets/images/country_flags/english.png',
       greetings: ['Be welcome!', 'Pleasure is mine! xD'],
       description:
@@ -32,9 +32,16 @@ class Me {
       name: '日本語',
       profiency: 'Beginner',
       flag: 'assets/images/country_flags/japan.png',
-      greetings: ['初めてなら!', 'お元気ですか'],
+      greetings: ['ようこそう', 'お元気ですか'],
       description:
           'ポルトガル語は私の母国語ですが、私は毎日英語を読んだり聞いたりしています。 私が学んだことのいくつかは、英語のコンテンツを通じて勉強することでした。 私は今、日本語を学ぶことにとても興奮しています。(づ｡◕‿‿◕｡)づ',
+    ),
+    Language(
+      name: 'Deutsch',
+      profiency: 'Beginner',
+      flag: 'assets/images/country_flags/german.png',
+      greetings: ['Herzlich willkommen!', 'Freut mich :)'],
+      description: 'Obwohl Portugiesisch meine Muttersprache ist, lese und höre ich täglich auf Englisch. Vieles, was ich gelernt habe, habe ich durch das Studium von englischen Inhalten gelernt. Zurzeit bin ich begeistert, Japanisch zu lernen!',
     ),
   ];
 
