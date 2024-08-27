@@ -23,7 +23,7 @@ class Me {
     Language(
       name: 'English',
       profiency: 'Fluent',
-      flag: 'assets/images/country_flags/english.png',
+      flag: 'assets/images/country_flags/canada.png',
       greetings: ['Be welcome!', 'Pleasure is mine! xD'],
       description:
           "Although portuguese is my mother tongue, I'm daily reading and listening in english. Most of the things I've learned were through my knowledge in english. Currently I'm pretty excited while learning japanese! 💖",
