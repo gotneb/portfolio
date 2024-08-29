@@ -14,7 +14,7 @@ class TechBadge {
 
   static const rust = TechBadge(
     name: 'Rust',
-    logo: FontAwesome.rust,
+    logo: FontAwesome.rust_brand,
   );
 
   static const golang = TechBadge(
@@ -24,12 +24,12 @@ class TechBadge {
 
   static const c = TechBadge(
     name: 'C',
-    logo: FontAwesome.c,
+    logo: FontAwesome.c_solid,
   );
 
   static const python = TechBadge(
     name: 'Python',
-    logo: FontAwesome.python,
+    logo: FontAwesome.python_brand,
   );
   static const mongodb = TechBadge(
     name: 'MongoDB',
