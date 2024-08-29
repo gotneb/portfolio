@@ -7,6 +7,7 @@ import 'package:portfolio/views/home/section_projects.dart';
 
 import 'package:portfolio/style.dart';
 import 'package:portfolio/views/home/section_quote.dart';
+import 'package:portfolio/views/home/section_tech_stack.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -70,6 +71,10 @@ class HomeView extends StatelessWidget {
         _buildTitle(title: 'Languages', hiragana: '私の言語'),
         const Gap(24),
         const LanguageSection(),
+        const Gap(24),
+        _buildTitle(title: 'Technologies', hiragana: 'テクノロジースタック'),
+        const Gap(32),
+        const TechStackSection(),
         const Gap(32),
         _buildTitle(title: 'Projects', hiragana: 'プロジェクト'),
         const Gap(32),
