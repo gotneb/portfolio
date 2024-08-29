@@ -1,16 +1,18 @@
-# portfolio
+# Portfolio
 
-A new Flutter project.
+This portfolio is written using Flutter (Dart, precisely) and then transpiling to Javascript and HTML using Wasm.
 
-## Getting Started
+```
+$ flutter build web
+```
 
-This project is a starting point for a Flutter application.
+That's it.
 
-A few resources to get you started if this is your first Flutter project:
+## Why not using conventional methods?
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+JavaScript, CSS, HTML are great tools, but I ❤️ building things in a different way, I like to explore
+others alternatives, into another perspective view.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I found in Flutter another way to build sites, and there's nothing wrong with this approach.
+
+But I'm not so naive to use this tool (Flutter is still growing, and has a lot to improve) to use in larges projects where performance counts.
