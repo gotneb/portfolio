@@ -1,3 +1,7 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:icons_plus/icons_plus.dart';
+import 'package:portfolio/models/tech_stack.dart';
+
 import 'language.dart';
 import 'project.dart';
 import 'tech_badge.dart';
@@ -5,7 +9,7 @@ import 'tech_badge.dart';
 class Me {
   static const name = 'Gabriel Bento da Silva';
   static const about = "Wassup! I'm a developer and freelancer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. One of my hobbies are creating histories and playing games.\n\nI enjoy problem-solving as well as exposing my creativty through my projects. I enjoy making things by myself from scratch, and also putting effort into making them unique. For me, making something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
-  static const job = ['Android Developer', 'C++ Developer', 'Flutter Developer', 'Rust enthusiast', 'Python developer'];
+  static const job = ['Mobile Developer', 'Android Developer', 'Flutter Developer', 'Systems Development'];
   
   static const email = 'gabrielorigenstdb@gmail.com';
   static const subject = 'Job Opportunity';
@@ -16,21 +20,21 @@ class Me {
       name: 'Português',
       profiency: 'Fluent',
       flag: 'assets/images/country_flags/brazil.png',
-      greetings: ['Seja muito bem vindo! xD', 'Feliz que esteja aqui! >.<'],
+      greetings: ['Bem vindo! :D'],
       description:
-          'Apesar do português ser minha língua nativa, eu diariamente estou lendo e escutando em inglês. Diversas coisas que aprendi foi estudando através de couteúdos em inglês. Atualmente estou entusiasmado aprendendo japonês! s2',
+          'Eu amo aprender novos idiomas. É muito interessante aprender como cada língua se comporta e suas características.',
     ),
     Language(
       name: 'English',
       profiency: 'Fluent',
-      flag: 'assets/images/country_flags/canada.png',
-      greetings: ['Be welcome!', 'Pleasure is mine! xD'],
+      flag: 'assets/images/country_flags/united-kingdom.png',
+      greetings: ['Welcome!', 'Pleasure is mine! xD'],
       description:
           "Although portuguese is my mother tongue, I'm daily reading and listening in english. Most of the things I've learned were through my knowledge in english. Currently I'm pretty excited while learning japanese! 💖",
     ),
     Language(
       name: '日本語',
-      profiency: 'Beginner',
+      profiency: 'Intermediate',
       flag: 'assets/images/country_flags/japan.png',
       greetings: ['ようこそう', 'お元気ですか'],
       description:
@@ -40,9 +44,24 @@ class Me {
       name: 'Deutsch',
       profiency: 'Beginner',
       flag: 'assets/images/country_flags/german.png',
-      greetings: ['Herzlich willkommen!', 'Freut mich :)'],
+      greetings: ['Willkommen!', 'Freut mich :)'],
       description: 'Obwohl Portugiesisch meine Muttersprache ist, lese und höre ich täglich auf Englisch. Vieles, was ich gelernt habe, habe ich durch das Studium von englischen Inhalten gelernt. Zurzeit bin ich begeistert, Japanisch zu lernen!',
     ),
+  ];
+
+  static const stack = [
+    TechStack(name: 'Flutter', icon: BoxIcons.bxl_flutter),
+    TechStack(name: 'Kotlin', icon: FontAwesomeIcons.connectdevelop),
+    TechStack(name: 'Android', icon: FontAwesome.android_brand),
+    TechStack(name: 'Docker', icon: FontAwesome.docker_brand),
+    TechStack(name: 'C++', icon: BoxIcons.bxl_c_plus_plus),
+    TechStack(name: 'Rust', icon: FontAwesomeIcons.rust),
+    TechStack(name: 'Python', icon: FontAwesomeIcons.python),
+    TechStack(name: 'Golang', icon: FontAwesomeIcons.golang),
+    TechStack(name: 'PostgreSQL', icon: BoxIcons.bxl_postgresql),
+    TechStack(name: 'MongoDB', icon: BoxIcons.bxl_mongodb),
+    TechStack(name: 'Firebase', icon: BoxIcons.bxl_firebase),
+    TechStack(name: 'API Development', icon: BoxIcons.bx_cloud),
   ];
 
   static final projects = [

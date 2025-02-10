@@ -82,7 +82,7 @@ class Style {
   // ********************************************************
   static final langTitle = GoogleFonts.notoSansJp(
     color: mainColor,
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: FontWeight.bold,
   );
 
