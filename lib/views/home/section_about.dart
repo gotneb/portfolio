@@ -23,8 +23,6 @@ class AboutSection extends StatelessWidget {
     'assets/images/bg_1.jpg',
   ];
 
-  static const _pfp = 'assets/images/seiji_amasawa.jpg';
-
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
@@ -37,7 +35,7 @@ class AboutSection extends StatelessWidget {
       child: ClipRRect(
         borderRadius: borderRadius,
         child: Image.asset(
-          _pfp,
+          Me.pfp,
           width: 300,
           height: 300,
         ),

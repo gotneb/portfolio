@@ -8,9 +8,10 @@ import 'tech_badge.dart';
 
 class Me {
   static const name = 'Gabriel Bento da Silva';
+  static const pfp = "assets/images/me.jpg";
   static const about = "Wassup! I'm a developer and freelancer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. One of my hobbies are creating histories and playing games.\n\nI enjoy problem-solving as well as exposing my creativty through my projects. I enjoy making things by myself from scratch, and also putting effort into making them unique. For me, making something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
   static const job = ['Mobile Developer', 'Android Developer', 'Flutter Developer', 'Systems Development'];
-  
+
   static const email = 'gabrielorigenstdb@gmail.com';
   static const subject = 'Job Opportunity';
   static const body = 'Hello! Feel free to get in touch to discuss opportunities.';
@@ -22,7 +23,7 @@ class Me {
       flag: 'assets/images/country_flags/brazil.png',
       greetings: ['Bem vindo! :D'],
       description:
-          'Eu amo aprender novos idiomas. É muito interessante aprender como cada língua se comporta e suas características.',
+          'Sou profundamente apaixonado por aprender idiomas. A alegria de poder me expressar e me comunicar em outra língua é uma das melhores experiências que já tive. Estou ansioso para continuar aprendendo e evoluindo nesta jornada. 💖',
     ),
     Language(
       name: 'English',
@@ -30,7 +31,7 @@ class Me {
       flag: 'assets/images/country_flags/united-kingdom.png',
       greetings: ['Welcome!', 'Pleasure is mine! xD'],
       description:
-          "Although portuguese is my mother tongue, I'm daily reading and listening in english. Most of the things I've learned were through my knowledge in english. Currently I'm pretty excited while learning japanese! 💖",
+          "I'm deeply passionate about learning languages. The joy of being able to express and communicate in another language is one of the most rewarding experiences I've ever had. I'm eager to continue learning and growing in this journey. 💖",
     ),
     Language(
       name: '日本語',
@@ -38,30 +39,30 @@ class Me {
       flag: 'assets/images/country_flags/japan.png',
       greetings: ['ようこそう', 'お元気ですか'],
       description:
-          'ポルトガル語は私の母国語ですが、私は毎日英語を読んだり聞いたりしています。 私が学んだことのいくつかは、英語のコンテンツを通じて勉強することでした。 私は今、日本語を学ぶことにとても興奮しています。(づ｡◕‿‿◕｡)づ',
+          '私は言語を学ぶことに深い情熱を持っています他の言語で自分を表現しコミュニケーションを取ることの喜びは、私が今まで経験した中で最も素晴らしいものの一つですこの旅を通じてもっと学び成長していくことを楽しみにしています(づ｡◕‿‿◕｡)づ',
     ),
     Language(
       name: 'Deutsch',
       profiency: 'Beginner',
       flag: 'assets/images/country_flags/german.png',
       greetings: ['Willkommen!', 'Freut mich :)'],
-      description: 'Obwohl Portugiesisch meine Muttersprache ist, lese und höre ich täglich auf Englisch. Vieles, was ich gelernt habe, habe ich durch das Studium von englischen Inhalten gelernt. Zurzeit bin ich begeistert, Japanisch zu lernen!',
+      description: 'Ich bin leidenschaftlich daran interessiert, Sprachen zu lernen. Die Freude, mich in einer anderen Sprache auszudrücken, ist eine der schönsten Erfahrungen, die ich je hatte. Ich freue mich darauf, weiter zu lernen und zu wachsen. 💖',
     ),
   ];
 
   static const stack = [
-    TechStack(name: 'Flutter', icon: BoxIcons.bxl_flutter),
-    TechStack(name: 'Kotlin', icon: FontAwesomeIcons.connectdevelop),
     TechStack(name: 'Android', icon: FontAwesome.android_brand),
-    TechStack(name: 'Docker', icon: FontAwesome.docker_brand),
     TechStack(name: 'C++', icon: BoxIcons.bxl_c_plus_plus),
-    TechStack(name: 'Rust', icon: FontAwesomeIcons.rust),
-    TechStack(name: 'Python', icon: FontAwesomeIcons.python),
-    TechStack(name: 'Golang', icon: FontAwesomeIcons.golang),
-    TechStack(name: 'PostgreSQL', icon: BoxIcons.bxl_postgresql),
-    TechStack(name: 'MongoDB', icon: BoxIcons.bxl_mongodb),
     TechStack(name: 'Firebase', icon: BoxIcons.bxl_firebase),
+    TechStack(name: 'Flutter', icon: BoxIcons.bxl_flutter),
+    TechStack(name: 'Rust', icon: FontAwesomeIcons.rust),
+    TechStack(name: 'MongoDB', icon: BoxIcons.bxl_mongodb),
+    TechStack(name: 'Kotlin', icon: FontAwesomeIcons.connectdevelop),
+    TechStack(name: 'Python', icon: FontAwesomeIcons.python),
+    TechStack(name: 'PostgreSQL', icon: BoxIcons.bxl_postgresql),
     TechStack(name: 'API Development', icon: BoxIcons.bx_cloud),
+    TechStack(name: 'Golang', icon: FontAwesomeIcons.golang),
+    TechStack(name: 'Docker', icon: FontAwesome.docker_brand),
   ];
 
   static final projects = [
@@ -74,6 +75,17 @@ class Me {
         TechBadge.typescript,
         TechBadge.python,
         TechBadge.server
+      ],
+    ),
+    const Project(
+      title: 'MangaHub - Read manga',
+      description:
+          'A published android app for reading thousands of mangas avaliable in english and portuguese.\n\nIt allows users switch from many manga sources. Has ADS, has read/write on device and has connection with our own api.\n\nI\'ve faced many challenges while doing it, like storing data, loading ADS,mutating state globally, exporting to PlayStore and others. But I could overcome them.',
+      stack: [
+        TechBadge.flutter,
+        TechBadge.typescript,
+        TechBadge.python,
+        TechBadge.server,
       ],
     ),
     const Project(
