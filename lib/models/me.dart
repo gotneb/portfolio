@@ -9,12 +9,19 @@ import 'tech_badge.dart';
 class Me {
   static const name = 'Gabriel Bento da Silva';
   static const pfp = "assets/images/me.jpg";
-  static const about = "Wassup! I'm a developer and freelancer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. One of my hobbies are creating histories and playing games.\n\nI enjoy problem-solving as well as exposing my creativty through my projects. I enjoy making things by myself from scratch, and also putting effort into making them unique. For me, making something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
-  static const job = ['Mobile Developer', 'Android Developer', 'Flutter Developer', 'Systems Development'];
+  static const about =
+      "Wassup! I'm a developer and freelancer mainly focused in android and backend development from Brazil.\nI'm passionate for creating things and learning. I'm usually engaged to talk about programming stuff most likely programming languages. One of my hobbies are creating histories and playing games.\n\nI enjoy problem-solving as well as exposing my creativty through my projects. I enjoy making things by myself from scratch, and also putting effort into making them unique. For me, making something unique is hard, it requires planning, a huge effort and most important, love for what you're doing.";
+  static const job = [
+    'Mobile Developer',
+    'Android Developer',
+    'Flutter Developer',
+    'Systems Development'
+  ];
 
   static const email = 'gabrielorigenstdb@gmail.com';
   static const subject = 'Job Opportunity';
-  static const body = 'Hello! Feel free to get in touch to discuss opportunities.';
+  static const body =
+      'Hello! Feel free to get in touch to discuss opportunities.';
 
   static const languages = [
     Language(
@@ -46,7 +53,8 @@ class Me {
       profiency: 'Beginner',
       flag: 'assets/images/country_flags/german.png',
       greetings: ['Willkommen!', 'Freut mich :)'],
-      description: 'Ich bin leidenschaftlich daran interessiert, Sprachen zu lernen. Die Freude, mich in einer anderen Sprache auszudrücken, ist eine der schönsten Erfahrungen, die ich je hatte. Ich freue mich darauf, weiter zu lernen und zu wachsen. 💖',
+      description:
+          'Ich bin leidenschaftlich daran interessiert, Sprachen zu lernen. Die Freude, mich in einer anderen Sprache auszudrücken, ist eine der schönsten Erfahrungen, die ich je hatte. Ich freue mich darauf, weiter zu lernen und zu wachsen. 💖',
     ),
   ];
 
@@ -67,26 +75,35 @@ class Me {
 
   static final projects = [
     const Project(
-      title: 'MangaHub - Read manga',
+      title: 'Course App',
       description:
-          'A published android app for reading thousands of mangas avaliable in english and portuguese.\n\nIt allows users switch from many manga sources. Has ADS, has read/write on device and has connection with our own api.\n\nI\'ve faced many challenges while doing it, like storing data, loading ADS,mutating state globally, exporting to PlayStore and others. But I could overcome them.',
+          '''This project follows the MVVM pattern to separate concerns and promote modularity.\n
+Room handles saving bookmarked courses using SQL locally on the device. ViewModels manage UI states efficiently, ensuring responsive and clean UI updates. Clear distinction between UI logic, business logic, and data layers. Hilt/Dagger handles dependencies across the app, making it easier to test and manage.
+''',
       stack: [
-        TechBadge.flutter,
-        TechBadge.typescript,
+        TechBadge.android,
+        TechBadge.kotlin,
         TechBadge.python,
-        TechBadge.server
+        TechBadge.server,
+      ],
+    ),
+    const Project(
+      title: 'Book Reader',
+      description:
+          '''This project follows the MVVM pattern to separate concerns and promote modularity.\n
+ViewModels manage UI states efficiently, ensuring responsive and clean UI updates. Clear distinction between UI logic, business logic, and data layers.\n
+Hilt/Dagger handles dependencies across the app, making it easier to test and manage.
+''',
+      stack: [
+        TechBadge.android,
+        TechBadge.kotlin,
       ],
     ),
     const Project(
       title: 'MangaHub - Read manga',
       description:
           'A published android app for reading thousands of mangas avaliable in english and portuguese.\n\nIt allows users switch from many manga sources. Has ADS, has read/write on device and has connection with our own api.\n\nI\'ve faced many challenges while doing it, like storing data, loading ADS,mutating state globally, exporting to PlayStore and others. But I could overcome them.',
-      stack: [
-        TechBadge.flutter,
-        TechBadge.typescript,
-        TechBadge.python,
-        TechBadge.server,
-      ],
+      stack: [TechBadge.android, TechBadge.flutter, TechBadge.python, TechBadge.server],
     ),
     const Project(
       title: 'Studio Ghibli Site',
@@ -104,13 +121,13 @@ class Me {
       title: 'Youtube Downloader',
       description:
           'An app that downloads audio and videos from youtube. It\'s connected with a package in pub.dev that exposes youtube api\'s therefore allowing me saving videos in user\'s device.\n\nDownload audio was a big challenge since I had no clue how to make it. Then I learned about FFMPEG, and how to convert video to audio using it. Because youtube\'s api doesn\'t provie the audio stream at all.',
-      stack: [TechBadge.flutter, TechBadge.python, TechBadge.server],
+      stack: [TechBadge.android, TechBadge.flutter, TechBadge.python, TechBadge.server],
     ),
     const Project(
       title: 'Electric Circuit Simulator',
       description:
           'Electrophorus (as it\'s named), is a simulator for electronics circuits. And it also has features for plotting system responses in real-time.\n\nIt was my first big project and a very challenging one. Since I was daily improving and relearning POO and was learn how to "rendering" using SkiaSharp. I\'m very proud of this because it fully follows POO design and everything there is rendered using SkiaSharp.',
-      stack: [TechBadge.c, TechBadge.tag, TechBadge.desktop, TechBadge.windows],
+      stack: [TechBadge.csharp, TechBadge.desktop, TechBadge.windows],
     ),
     const Project(
       title: 'Studio Ghibli Api',

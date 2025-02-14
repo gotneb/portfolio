@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/models/project.dart';
 import 'package:portfolio/style.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CardProject extends StatefulWidget {
   const CardProject({
@@ -34,10 +35,14 @@ class _CardProjectState extends State<CardProject> {
                     color: isMouseInside ? Colors.white : null,
                     gradient: isMouseInside ? null : _buildIconGradient()),
                 child: Center(
-                    child: Icon(
-                  e.logo,
-                  color: isMouseInside ? Style.black : Colors.white,
-                  size: 34,
+                    child: SvgPicture.asset(
+                  e.asset,
+                  colorFilter: ColorFilter.mode(
+                    isMouseInside ? Colors.black87 : Colors.white,
+                    BlendMode.srcIn,
+                  ),
+                  width: 32, // Adjust size
+                  height: 32,
                 ))),
           ))
       .toList();
