@@ -1,81 +1,79 @@
-import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
-
 class TechBadge {
   const TechBadge({
     required this.name,
-    required this.logo,
+    required this.asset,
   });
 
   final String name;
-  final IconData logo;
+  final String asset;
 
+  static const _path = 'assets/images/icons';
   static const defaultSize = 48.0;
+
+  static const android = TechBadge(
+    name: 'Android',
+    asset: '$_path/Android.svg',
+  );
+
+  static const kotlin = TechBadge(
+    name: 'Kotlin',
+    asset: '$_path/Kotlin.svg',
+  );
 
   static const rust = TechBadge(
     name: 'Rust',
-    logo: FontAwesome.rust_brand,
+    asset: '$_path/Rust.svg',
   );
 
   static const golang = TechBadge(
     name: 'Golang',
-    logo: BoxIcons.bxl_go_lang,
+    asset: '$_path/Golang.svg',
   );
 
-  static const c = TechBadge(
-    name: 'C',
-    logo: FontAwesome.c_solid,
+  static const csharp = TechBadge(
+    name: 'C#',
+    asset: '$_path/CSharp.svg',
   );
 
   static const python = TechBadge(
     name: 'Python',
-    logo: FontAwesome.python_brand,
+    asset: '$_path/Python.svg',
   );
   static const mongodb = TechBadge(
     name: 'MongoDB',
-    logo: BoxIcons.bxl_mongodb,
+    asset: '$_path/MongoDB.svg',
   );
   static const flutter = TechBadge(
     name: 'Flutter',
-    logo: BoxIcons.bxl_flutter,
+    asset: '$_path/Flutter.svg',
   );
   static const cplusplus = TechBadge(
     name: 'C++',
-    logo: BoxIcons.bxl_c_plus_plus,
+    asset: '$_path/CPlusPlus.svg',
   );
 
   static const server = TechBadge(
     name: 'Server',
-    logo: BoxIcons.bx_server,
-  );
-
-  static const desktop = TechBadge(
-    name: 'Desktop',
-    logo: BoxIcons.bx_desktop,
+    asset: '$_path/Server.svg',
   );
 
   static const windows = TechBadge(
     name: 'Windows',
-    logo: BoxIcons.bxl_windows,
+    asset: '$_path/Windows.svg',
   );
 
-  static const typescript = TechBadge(
-    name: 'Typescript',
-    logo: BoxIcons.bxl_typescript,
-  );
-
-  static const tag = TechBadge(
-    name: 'tag',
-    logo: Icons.tag,
+  static const desktop = TechBadge(
+    name: 'Desktop',
+    asset: '$_path/Desktop.svg',
   );
 
   static const godot = TechBadge(
     name: 'Godot',
-    logo: Icons.sports_esports,
+    asset: '$_path/Godot.svg',
   );
 
   static const git = TechBadge(
     name: 'Git',
-    logo: BoxIcons.bxl_git,
+    asset: '$_path/Git.svg',
   );
 }
