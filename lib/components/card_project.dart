@@ -95,7 +95,7 @@ class _CardProjectState extends State<CardProject> {
       child: Container(
         padding: const EdgeInsets.all(22),
         width: side,
-        height: 400,
+        height: 410,
         decoration: BoxDecoration(
           color: isMouseInside ? null : Style.blue2,
           borderRadius: BorderRadius.circular(18),

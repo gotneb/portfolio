@@ -30,7 +30,7 @@ class Me {
       flag: 'assets/images/country_flags/brazil.png',
       greetings: ['Bem vindo! :D'],
       description:
-          'Sou profundamente apaixonado por aprender idiomas. A alegria de poder me expressar e me comunicar em outra língua é uma das melhores experiências que já tive. Estou ansioso para continuar aprendendo e evoluindo nesta jornada. 💖',
+          'Sou profundamente apaixonado por aprender novos idiomas. Gosto muito de entender a cultura e estudar sobre línguas. Estou ansioso para continuar aprendendo e evoluindo nesta jornada. 💖',
     ),
     Language(
       name: 'English',
@@ -75,6 +75,18 @@ class Me {
 
   static final projects = [
     const Project(
+      title: 'Crypto Tracker App',
+      description:
+          '''This project follows the MVI pattern usin a clear separation of concerns and modularity. ViewModels efficiently manage UI states, keeping updates responsive and clean, while Koin handles dependency injection for better testability and maintainability.\n
+Ktor powers the API communication, enabling seamless network requests and real-time data fetching. The app features a custom Canvas-based graph to visualize currency trends over time and adapts its theme dynamically based on the user’s background.
+\nNavigation is handled with Jetpack’s Adaptable Navigation component, ensuring smooth transitions between screens and an intuitive user experience.
+''',
+      stack: [
+        TechBadge.android,
+        TechBadge.kotlin,
+      ],
+    ),
+    const Project(
       title: 'Course App',
       description:
           '''This project follows the MVVM pattern to separate concerns and promote modularity.\n
@@ -98,6 +110,14 @@ Hilt/Dagger handles dependencies across the app, making it easier to test and ma
         TechBadge.android,
         TechBadge.kotlin,
       ],
+    ),
+    const Project(
+      title: 'Rlox Language',
+      description:
+          '''This project is a Rust implementation of the Lox interpreter from Crafting Interpreters, originally written in Java. It follows the book’s structure while leveraging Rust’s safety, performance, and ownership model to build a more robust and efficient interpreter.\n
+The implementation includes lexical analysis, parsing, and expression evaluation, staying true to the original design while adapting to Rust’s idioms. Memory management is handled safely without a garbage collector, and the interpreter ensures efficient execution with clear separation between syntax analysis and runtime evaluation.\n
+This project demonstrates a deep understanding of interpreter design, language parsing, and Rust’s unique features, making it a solid foundation for further enhancements or new language implementations.''',
+      stack: [TechBadge.rust],
     ),
     const Project(
       title: 'MangaHub - Read manga',
